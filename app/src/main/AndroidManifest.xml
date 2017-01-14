@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yenhenchia.projectpractice">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Spinner.SpinnerActivity"
+            android:label="Spinner" />
+        <activity
+            android:name=".RadioButton.RadioButtonActivity"
+            android:label="RadioButton" />
+        <activity
+            android:name=".NumberPicker.NumberPickerActivity"
+            android:label="NumberPickerActivity" />
+        <activity
+            android:name=".ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity"
+            android:label="ScrollViewAndCheckBox" />
+        <activity
+            android:name=".Linearlayout.LinearlayoutActivity"
+            android:label="Linearlayout" />
+        <activity android:name=".TableLayout.TableLayoutActivity" />
+        <activity android:name=".RelativeLayout.RelativeLayoutActivity" />
+        <activity android:name=".ButtonSelector.ButtonSelectorActivity" />
+        <activity android:name=".CoordinatorLayout.CoordinatorLayoutActivity" />
+        <activity android:name=".ImageButtonAndView.ImageButtonAndViewActivity" />
+        <activity android:name=".GridView.GridViewActivity" />
+        <activity android:name=".ViewAnimation.ViewAnimationActivity" />
+        <activity android:name=".DrawableAnimationAndGame.DrawableAnimatinAndGameActivity" />
+        <activity android:name=".PropertyAnimation.PropertyAnimationActivity" />
+        <activity android:name=".SimpleFragment.SimpleFragmentActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yenhenchia.projectpractice.SimpleFragment.SimpleMainFragment">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtRelativeTitle"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/txtCmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtRelatvieCmp"
+        android:layout_below="@id/txtTitle"
+        android:layout_alignLeft="@id/txtTitle"
+        android:textSize="20sp"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/txtPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtRelativePlayer"
+        android:layout_alignRight="@id/txtTitle"
+        android:layout_below="@id/txtTitle"
+        android:textSize="20sp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnScissors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPlayer"
+        android:layout_alignLeft="@id/txtPlayer"
+        android:src="@mipmap/icon_scissors"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/imgCmpPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnScissors"
+        android:src="@mipmap/icon_scissors"
+        android:layout_alignLeft="@id/txtTitle" />
+
+    <ImageButton
+        android:id="@+id/btnStone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnScissors"
+        android:layout_alignLeft="@id/btnScissors"
+        android:src="@mipmap/icon_hammer"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnPaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStone"
+        android:layout_alignLeft="@id/btnScissors"
+        android:src="@mipmap/icon_cloth"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btnPaper"
+        android:text="@string/relativeResult"
+        android:textSize="20sp"/>
+</RelativeLayout>

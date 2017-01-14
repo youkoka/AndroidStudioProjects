@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">ProjectPractice</string>
+
+    <string-array name="listItem">
+
+        <item>Spinner</item>
+        <item>RadioButton</item>
+        <item>NumberPicker</item>
+        <item>ScrollViewAndCheckbox</item>
+        <item>LinearLayout</item>
+        <item>TableLayout</item>
+        <item>RelativeLayout</item>
+        <item>ButtonSelector</item>
+        <item>CoordinatorLayout</item>
+        <item>ImageButtonAndView</item>
+        <item>GridView</item>
+        <item>ViewAnimation</item>
+        <item>DrawAnimation</item>
+        <item>PropertyAnimation</item>
+        <item>SimpleFragment</item>
+    </string-array>
+
+    <string name="sex">性別:</string>
+    <string name="sexMale">男</string>
+    <string name="sexFemale">女</string>
+
+    <string-array name="sexList">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string name="age">年齡:</string>
+    <string name="male_age_range1">小於28歲</string>
+    <string name="male_age_range2">28~33歲</string>
+    <string name="male_age_range3">大於33歲</string>
+    <string name="female_age_range1">小於25歲</string>
+    <string name="female_age_range2">25~30歲</string>
+    <string name="female_age_range3">大於30歲</string>
+
+    <string name="phAge">請輸入年齡</string>
+    <string name="check">確定</string>
+    <string name="suggest">建議:</string>
+    <string name="result">結果:</string>
+
+    <string name="txtRelativeTitle">和電腦猜拳</string>
+    <string name="txtRelatvieCmp">電腦出拳:</string>
+    <string name="txtRelativePlayer">玩家出拳:</string>
+    <string name="scissors">剪刀</string>
+    <string name="stone">石頭</string>
+    <string name="paper">布</string>
+    <string name="relativeResult">判定輸贏:</string>
+
+    <string name="btnRoll">開始擲骰</string>
+    <string name="rollResult">擲骰點數:</string>
+
+    <string name="totoalSet">全部局數</string>
+    <string name="playerWinSet">玩家贏</string>
+    <string name="cmpWinSet">電腦贏</string>
+    <string name="draw">平手</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
