@@ -13,6 +13,7 @@ public class SimpleFragmentActivity extends AppCompatActivity
 
     private SimpleMainFragment simpleMainFragment;
     private SimpleResultFragment simpleResultFragment;
+    private SimpleResult2Fragment simpleResult2Fragment;
     private SimpleButtonFragment simpleButtonFragment;
 
     private boolean isShowResult;

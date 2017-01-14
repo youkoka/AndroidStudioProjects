@@ -5,5 +5,58 @@
     tools:context="com.example.yenhenchia.projectpractice.SimpleFragment.SimpleResult2Fragment">
 
 
+    <TableRow>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/totoalSet"/>
+
+        <EditText
+            android:id="@+id/editTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:focusable="false"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/playerWinSet"/>
+
+        <EditText
+            android:id="@+id/editPlayerSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:focusable="false"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cmpWinSet"/>
+
+        <EditText
+            android:id="@+id/editCmpSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:focusable="false"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/draw" />
+
+        <EditText
+            android:id="@+id/editDraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:focusable="false"/>
+    </TableRow>
 </TableLayout>
