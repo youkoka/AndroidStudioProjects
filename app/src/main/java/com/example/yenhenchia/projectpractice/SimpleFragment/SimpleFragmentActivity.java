@@ -1,9 +1,12 @@
 package com.example.yenhenchia.projectpractice.SimpleFragment;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.example.yenhenchia.projectpractice.R;
 
 public class SimpleFragmentActivity extends AppCompatActivity
@@ -34,6 +37,7 @@ public class SimpleFragmentActivity extends AppCompatActivity
         this.simpleMainFragment.mCallback = this;
 
         this.simpleResultFragment = new SimpleResultFragment();
+        this.simpleResult2Fragment = new SimpleResult2Fragment();
 
         this.simpleButtonFragment = new SimpleButtonFragment();
         this.simpleButtonFragment.mCallback = this;
@@ -70,7 +74,15 @@ public class SimpleFragmentActivity extends AppCompatActivity
                 break;
         }
 
-        this.simpleResultFragment.setGameResult(this.totalSetCount, this.drawSetCount, this.playerWinSetCount, this.cmpWinSetCount);
+        if (this.simpleResultFragment != null) {
+
+            this.simpleResultFragment.setGameResult(this.totalSetCount, this.drawSetCount, this.playerWinSetCount, this.cmpWinSetCount);
+        }
+
+        if (this.simpleResult2Fragment != null) {
+
+            this.simpleResult2Fragment.setGameResult(this.totalSetCount, this.drawSetCount, this.playerWinSetCount, this.cmpWinSetCount);
+        }
     }
 
 
@@ -81,14 +93,13 @@ public class SimpleFragmentActivity extends AppCompatActivity
 
             case SHOW_RESULT_TYPE_RESULT1: {
 
-                this.currentShowResultType = SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT1;
-
                 FragmentManager fragmentManager = getSupportFragmentManager();
 
                 if (this.isShowResult == true) {
 
                     if (this.currentShowResultType != SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT1) {
 
+                        fragmentManager.beginTransaction().replace(R.id.simpleResultFragment, this.simpleResultFragment, "SimpleResultFragment").commit();
                     }
                 }
                 else {
@@ -96,17 +107,25 @@ public class SimpleFragmentActivity extends AppCompatActivity
                     if (this.simpleResultFragment == null) {
 
                         this.simpleResultFragment = new SimpleResultFragment();
+
+                        Log.d("SimpleResultFragment", "simpleResultFragment");
                     }
 
                     fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResultFragment, "SimpleResultFragment").commit();
                 }
 
+                fragmentManager.executePendingTransactions();
+
+                if (this.simpleResultFragment != null) {
+
+                    this.simpleResultFragment.setGameResult(this.totalSetCount, this.drawSetCount, this.playerWinSetCount, this.cmpWinSetCount);
+                }
+
+                this.currentShowResultType = SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT1;
                 isShowResult = true;
             }
                 break;
             case SHOW_RESULT_TYPE_RESULT2: {
-
-                this.currentShowResultType = SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT2;
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -114,18 +133,29 @@ public class SimpleFragmentActivity extends AppCompatActivity
 
                     if (this.currentShowResultType != SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT2) {
 
+                        fragmentManager.beginTransaction().replace(R.id.simpleResultFragment, this.simpleResult2Fragment, "SimpleResultFragment").commit();
                     }
                 }
                 else {
 
-                    if (this.simpleResultFragment == null) {
+                    if (this.simpleResult2Fragment == null) {
 
-                        this.simpleResultFragment = new SimpleResultFragment();
+                        this.simpleResult2Fragment = new SimpleResult2Fragment();
+
+                        Log.d("SimpleResultFragment", "simpleResult2fragment");
                     }
 
-                    fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResultFragment, "SimpleResultFragment").commit();
+                    fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResult2Fragment, "SimpleResultFragment").commit();
                 }
 
+                fragmentManager.executePendingTransactions();
+
+                if (this.simpleResult2Fragment != null) {
+
+                    this.simpleResult2Fragment.setGameResult(this.totalSetCount, this.drawSetCount, this.playerWinSetCount, this.cmpWinSetCount);
+                }
+
+                this.currentShowResultType = SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT2;
                 isShowResult = true;
             }
                 break;
@@ -134,11 +164,11 @@ public class SimpleFragmentActivity extends AppCompatActivity
                 if (this.isShowResult == true) {
 
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    SimpleResultFragment simpleResultFragment = (SimpleResultFragment) fragmentManager.findFragmentByTag("SimpleResultFragment");
+                    Fragment fragment = fragmentManager.findFragmentByTag("SimpleResultFragment");
 
-                    if (simpleResultFragment != null) {
+                    if (fragment != null) {
 
-                        fragmentManager.beginTransaction().remove(simpleResultFragment).commit();
+                        fragmentManager.beginTransaction().remove(fragment).commit();
 
                         this.currentShowResultType = SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_HIDE;
                         isShowResult = false;

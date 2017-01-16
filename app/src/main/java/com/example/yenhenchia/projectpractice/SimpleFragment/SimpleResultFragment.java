@@ -34,6 +34,16 @@ public class SimpleResultFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+//        this.editTotalSet = (EditText)getView().findViewById(R.id.editTotal);
+//        this.editDrawSet = (EditText)getView().findViewById(R.id.editDraw);
+//        this.editPlayerWinSet = (EditText)getView().findViewById(R.id.editPlayerSet);
+//        this.editCmpWinSet = (EditText)getView().findViewById(R.id.editCmpSet);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
         this.editTotalSet = (EditText)getView().findViewById(R.id.editTotal);
         this.editDrawSet = (EditText)getView().findViewById(R.id.editDraw);
         this.editPlayerWinSet = (EditText)getView().findViewById(R.id.editPlayerSet);
@@ -42,9 +52,24 @@ public class SimpleResultFragment extends Fragment {
 
     public void setGameResult(int totalSet, int drawSet, int playerWinSet, int cmpWinSet) {
 
-        this.editTotalSet.setText(String.valueOf(totalSet));
-        this.editPlayerWinSet.setText(String.valueOf(playerWinSet));
-        this.editCmpWinSet.setText(String.valueOf(cmpWinSet));
-        this.editDrawSet.setText(String.valueOf(drawSet));
+        if (this.editTotalSet != null) {
+
+            this.editTotalSet.setText(String.valueOf(totalSet));
+        }
+
+        if (this.editPlayerWinSet != null) {
+
+            this.editPlayerWinSet.setText(String.valueOf(playerWinSet));
+        }
+
+        if (this.editCmpWinSet != null) {
+
+            this.editCmpWinSet.setText(String.valueOf(cmpWinSet));
+        }
+
+        if (this.editDrawSet != null) {
+
+            this.editDrawSet.setText(String.valueOf(drawSet));
+        }
     }
 }
