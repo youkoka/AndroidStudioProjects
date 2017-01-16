@@ -1,6 +1,8 @@
 package com.example.yenhenchia.projectpractice.SimpleFragment;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -58,6 +60,30 @@ public class SimpleButtonFragment extends Fragment {
         this.btnResultHide = (Button)getView().findViewById(R.id.btnHide);
         this.btnResultHide.setTag(ShowResultType.SHOW_RESULT_TYPE_HIDE);
         this.btnResultHide.setOnClickListener(onClickListener);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        Activity activity = null;
+
+        if (context instanceof Activity) {
+
+            activity = (Activity)context;
+        }
+
+        if (activity != null) {
+
+            try {
+
+                mCallback = (SimpleButtonIngerface) activity;
+            }
+            catch (ClassCastException e) {
+
+                e.printStackTrace();
+            }
+        }
     }
 
     private Button.OnClickListener onClickListener = new Button.OnClickListener() {

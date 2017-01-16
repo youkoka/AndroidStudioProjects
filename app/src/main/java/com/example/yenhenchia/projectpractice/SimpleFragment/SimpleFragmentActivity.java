@@ -12,6 +12,11 @@ import com.example.yenhenchia.projectpractice.R;
 public class SimpleFragmentActivity extends AppCompatActivity
         implements SimpleMainFragment.SimpleMainInterface, SimpleButtonFragment.SimpleButtonIngerface{
 
+    //! 以下表示3大區塊fragment
+    private final static String SimpleMainFragmentTag       = "SimpleMainFragmentTag";
+    private final static String SimpleResultFragmentTag     = "SimpleResultFragmentTag";
+    private final static String SimpleButtonFragmentTag     = "SimpleButtonFragmentTag";
+
     private int totalSetCount, playerWinSetCount, cmpWinSetCount, drawSetCount;
 
     private SimpleMainFragment simpleMainFragment;
@@ -40,11 +45,11 @@ public class SimpleFragmentActivity extends AppCompatActivity
         this.simpleResult2Fragment = new SimpleResult2Fragment();
 
         this.simpleButtonFragment = new SimpleButtonFragment();
-        this.simpleButtonFragment.mCallback = this;
+//        this.simpleButtonFragment.mCallback = this;
 
-        fragmentTransaction.add(R.id.simpleMainFragment, simpleMainFragment, "SimpleMainFragment");
-        fragmentTransaction.add(R.id.simpleResultFragment, simpleResultFragment, "SimpleResultFragment");
-        fragmentTransaction.add(R.id.simpleButtonFragment, simpleButtonFragment, "SimpleButtonFragment");
+        fragmentTransaction.add(R.id.simpleMainFragment, simpleMainFragment, SimpleMainFragmentTag);
+        fragmentTransaction.add(R.id.simpleResultFragment, simpleResultFragment, SimpleResultFragmentTag);
+        fragmentTransaction.add(R.id.simpleButtonFragment, simpleButtonFragment, SimpleButtonFragmentTag);
 
         fragmentTransaction.commit();
     }
@@ -91,15 +96,17 @@ public class SimpleFragmentActivity extends AppCompatActivity
 
         switch (showResultType) {
 
+            case SHOW_RESULT_TYPE_UNKNOW:
+                break;
             case SHOW_RESULT_TYPE_RESULT1: {
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
 
-                if (this.isShowResult == true) {
+                if (this.isShowResult) {
 
                     if (this.currentShowResultType != SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT1) {
 
-                        fragmentManager.beginTransaction().replace(R.id.simpleResultFragment, this.simpleResultFragment, "SimpleResultFragment").commit();
+                        fragmentManager.beginTransaction().replace(R.id.simpleResultFragment, this.simpleResultFragment, SimpleResultFragmentTag).commit();
                     }
                 }
                 else {
@@ -111,9 +118,10 @@ public class SimpleFragmentActivity extends AppCompatActivity
                         Log.d("SimpleResultFragment", "simpleResultFragment");
                     }
 
-                    fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResultFragment, "SimpleResultFragment").commit();
+                    fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResultFragment, SimpleResultFragmentTag).commit();
                 }
 
+                fragmentManager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentManager.executePendingTransactions();
 
                 if (this.simpleResultFragment != null) {
@@ -129,11 +137,11 @@ public class SimpleFragmentActivity extends AppCompatActivity
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
 
-                if (this.isShowResult == true) {
+                if (this.isShowResult) {
 
                     if (this.currentShowResultType != SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_RESULT2) {
 
-                        fragmentManager.beginTransaction().replace(R.id.simpleResultFragment, this.simpleResult2Fragment, "SimpleResultFragment").commit();
+                        fragmentManager.beginTransaction().replace(R.id.simpleResultFragment, this.simpleResult2Fragment, SimpleResultFragmentTag).commit();
                     }
                 }
                 else {
@@ -145,7 +153,8 @@ public class SimpleFragmentActivity extends AppCompatActivity
                         Log.d("SimpleResultFragment", "simpleResult2fragment");
                     }
 
-                    fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResult2Fragment, "SimpleResultFragment").commit();
+                    fragmentManager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    fragmentManager.beginTransaction().add(R.id.simpleResultFragment, this.simpleResult2Fragment, SimpleResultFragmentTag).commit();
                 }
 
                 fragmentManager.executePendingTransactions();
@@ -161,13 +170,15 @@ public class SimpleFragmentActivity extends AppCompatActivity
                 break;
             case SHOW_RESULT_TYPE_HIDE: {
 
-                if (this.isShowResult == true) {
+                if (this.isShowResult) {
 
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    Fragment fragment = fragmentManager.findFragmentByTag("SimpleResultFragment");
+                    Fragment fragment = fragmentManager.findFragmentByTag(SimpleResultFragmentTag);
 
                     if (fragment != null) {
 
+                        fragmentManager.beginTransaction().setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+//                        fragmentManager.beginTransaction().addToBackStack(null);
                         fragmentManager.beginTransaction().remove(fragment).commit();
 
                         this.currentShowResultType = SimpleButtonFragment.ShowResultType.SHOW_RESULT_TYPE_HIDE;
