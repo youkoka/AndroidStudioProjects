@@ -46,11 +46,22 @@ public class ImageListViewActivity extends ListActivity {
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, mList, R.layout.image_list_item_layout, new String[]{"imgListIcon", "txtListTitle"}, new int[]{R.id.imgListIcon, R.id.txtListTitle});
         setListAdapter(simpleAdapter);
 
+        /*
         ListView listView = getListView();
         listView.setOnItemClickListener(onItemClickListener);
+        */
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
 
+        String s = ((TextView)v.findViewById(R.id.txtListTitle)).getText().toString();
+
+        txtListResult.setText(s);
+    }
+
+    /*
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
 
 
@@ -62,4 +73,5 @@ public class ImageListViewActivity extends ListActivity {
             txtListResult.setText(s);
         }
     };
+    */
 }

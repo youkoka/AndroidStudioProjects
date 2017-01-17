@@ -19,6 +19,7 @@
         <item>PropertyAnimation</item>
         <item>SimpleFragment</item>
         <item>ImageListView</item>
+        <item>ExpandableListView</item>
 
     </string-array>
 

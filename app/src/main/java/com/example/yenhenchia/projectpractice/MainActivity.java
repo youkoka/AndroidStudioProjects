@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
+import com.example.yenhenchia.projectpractice.ExpandableListView.ExpandListViewActivity;
 import com.example.yenhenchia.projectpractice.GridView.GridViewActivity;
 import com.example.yenhenchia.projectpractice.ImageButtonAndView.ImageButtonAndViewActivity;
 import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivity;
@@ -30,22 +31,23 @@ import com.example.yenhenchia.projectpractice.ViewAnimation.ViewAnimationActivit
 
 public class MainActivity extends ListActivity {
 
-    private final static int itemTypeSpinner               = 0;
-    private final static int itemTypeRadioButton           = 1;
-    private final static int itemTypeNumberPicker          = 2;
-    private final static int itemTypeScrollViewAndCheckbox = 3;
-    private final static int itemTypeLinearlayout          = 4;
-    private final static int itemTypeTableLayout           = 5;
-    private final static int itemTypeRelativeLayout        = 6;
-    private final static int itemTypeButtonSelector        = 7;
-    private final static int itemTypeCoordinatorLayout     = 8;
-    private final static int itemTypeImageButtonAndView    = 9;
-    private final static int itemTypeGridView              = 10;
-    private final static int itemTypeViewAnimation         = 11;
-    private final static int itemTypeDrawableAnimation     = 12;
-    private final static int itemTypePropertyAnimation     = 13;
-    private final static int itemTypeSimpleFragment        = 14;
-    private final static int itemTypeImageListView         = 15;
+    private static final int itemTypeSpinner               = 0;
+    private static final int itemTypeRadioButton           = 1;
+    private static final int itemTypeNumberPicker          = 2;
+    private static final int itemTypeScrollViewAndCheckbox = 3;
+    private static final int itemTypeLinearlayout          = 4;
+    private static final int itemTypeTableLayout           = 5;
+    private static final int itemTypeRelativeLayout        = 6;
+    private static final int itemTypeButtonSelector        = 7;
+    private static final int itemTypeCoordinatorLayout     = 8;
+    private static final int itemTypeImageButtonAndView    = 9;
+    private static final int itemTypeGridView              = 10;
+    private static final int itemTypeViewAnimation         = 11;
+    private static final int itemTypeDrawableAnimation     = 12;
+    private static final int itemTypePropertyAnimation     = 13;
+    private static final int itemTypeSimpleFragment        = 14;
+    private static final int itemTypeImageListView         = 15;
+    private static final int itemTypeExpandableListView    = 16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,6 +180,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ImageListViewActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeExpandableListView: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ExpandListViewActivity.class);
                     startActivity(intent);
                 }
                     break;
