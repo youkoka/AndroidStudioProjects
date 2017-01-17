@@ -15,6 +15,7 @@ import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayou
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
 import com.example.yenhenchia.projectpractice.GridView.GridViewActivity;
 import com.example.yenhenchia.projectpractice.ImageButtonAndView.ImageButtonAndViewActivity;
+import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivity;
 import com.example.yenhenchia.projectpractice.Linearlayout.LinearlayoutActivity;
 import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimationActivity;
 import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
@@ -29,21 +30,22 @@ import com.example.yenhenchia.projectpractice.ViewAnimation.ViewAnimationActivit
 
 public class MainActivity extends ListActivity {
 
-    private final int itemTypeSpinner               = 0;
-    private final int itemTypeRadioButton           = 1;
-    private final int itemTypeNumberPicker          = 2;
-    private final int itemTypeScrollViewAndCheckbox = 3;
-    private final int itemTypeLinearlayout          = 4;
-    private final int itemTypeTableLayout           = 5;
-    private final int itemTypeRelativeLayout        = 6;
-    private final int itemTypeButtonSelector        = 7;
-    private final int itemTypeCoordinatorLayout     = 8;
-    private final int itemTypeImageButtonAndView    = 9;
-    private final int itemTypeGridView              = 10;
-    private final int itemTypeViewAnimation         = 11;
-    private final int itemTypeDrawableAnimation     = 12;
-    private final int itemTypePropertyAnimation     = 13;
-    private final int itemTypeSimpleFragment        = 14;
+    private final static int itemTypeSpinner               = 0;
+    private final static int itemTypeRadioButton           = 1;
+    private final static int itemTypeNumberPicker          = 2;
+    private final static int itemTypeScrollViewAndCheckbox = 3;
+    private final static int itemTypeLinearlayout          = 4;
+    private final static int itemTypeTableLayout           = 5;
+    private final static int itemTypeRelativeLayout        = 6;
+    private final static int itemTypeButtonSelector        = 7;
+    private final static int itemTypeCoordinatorLayout     = 8;
+    private final static int itemTypeImageButtonAndView    = 9;
+    private final static int itemTypeGridView              = 10;
+    private final static int itemTypeViewAnimation         = 11;
+    private final static int itemTypeDrawableAnimation     = 12;
+    private final static int itemTypePropertyAnimation     = 13;
+    private final static int itemTypeSimpleFragment        = 14;
+    private final static int itemTypeImageListView         = 15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,6 +171,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SimpleFragmentActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeImageListView: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ImageListViewActivity.class);
                     startActivity(intent);
                 }
                     break;

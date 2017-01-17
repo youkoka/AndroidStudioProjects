@@ -18,6 +18,8 @@
         <item>DrawAnimation</item>
         <item>PropertyAnimation</item>
         <item>SimpleFragment</item>
+        <item>ImageListView</item>
+
     </string-array>
 
     <string name="sex">性別:</string>

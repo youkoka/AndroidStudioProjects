@@ -39,7 +39,8 @@
         <activity android:name=".ViewAnimation.ViewAnimationActivity" />
         <activity android:name=".DrawableAnimationAndGame.DrawableAnimatinAndGameActivity" />
         <activity android:name=".PropertyAnimation.PropertyAnimationActivity" />
-        <activity android:name=".SimpleFragment.SimpleFragmentActivity"></activity>
+        <activity android:name=".SimpleFragment.SimpleFragmentActivity" />
+        <activity android:name=".ImageListView.ImageListViewActivity" />
     </application>
 
 </manifest>
