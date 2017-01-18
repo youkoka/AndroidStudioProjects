@@ -20,6 +20,7 @@
         <item>SimpleFragment</item>
         <item>ImageListView</item>
         <item>ExpandableListView</item>
+        <item>RecyclerView</item>
 
     </string-array>
 

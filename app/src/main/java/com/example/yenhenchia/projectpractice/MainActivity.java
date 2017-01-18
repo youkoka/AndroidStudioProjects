@@ -20,6 +20,7 @@ import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivit
 import com.example.yenhenchia.projectpractice.Linearlayout.LinearlayoutActivity;
 import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimationActivity;
 import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
+import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardViewActivity;
 import com.example.yenhenchia.projectpractice.RelativeLayout.RelativeLayoutActivity;
 import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
@@ -48,6 +49,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSimpleFragment        = 14;
     private static final int itemTypeImageListView         = 15;
     private static final int itemTypeExpandableListView    = 16;
+    private static final int itemTypeRecyclerView          = 17;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -187,6 +189,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ExpandListViewActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeRecyclerView: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, RecyclerViewAndCardViewActivity.class);
                     startActivity(intent);
                 }
                     break;

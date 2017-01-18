@@ -41,7 +41,8 @@
         <activity android:name=".PropertyAnimation.PropertyAnimationActivity" />
         <activity android:name=".SimpleFragment.SimpleFragmentActivity" />
         <activity android:name=".ImageListView.ImageListViewActivity" />
-        <activity android:name=".ExpandableListView.ExpandListViewActivity"></activity>
+        <activity android:name=".ExpandableListView.ExpandListViewActivity" />
+        <activity android:name=".RecyclerView.RecyclerViewAndCardViewActivity"></activity>
     </application>
 
 </manifest>
