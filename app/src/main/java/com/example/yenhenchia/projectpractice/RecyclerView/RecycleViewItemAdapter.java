@@ -39,7 +39,7 @@ public class RecycleViewItemAdapter extends RecyclerView.Adapter<RecycleViewItem
         @Override
         public void onClick(View view) {
 
-            Toast.makeText(view.getContext(), mListString.get(getAdapterPosition()), Toast.LENGTH_LONG);
+            Toast.makeText(view.getContext(), mListString.get(getAdapterPosition()), Toast.LENGTH_LONG).show();
         }
     }
 

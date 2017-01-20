@@ -42,7 +42,8 @@
         <activity android:name=".SimpleFragment.SimpleFragmentActivity" />
         <activity android:name=".ImageListView.ImageListViewActivity" />
         <activity android:name=".ExpandableListView.ExpandListViewActivity" />
-        <activity android:name=".RecyclerView.RecyclerViewAndCardViewActivity"></activity>
+        <activity android:name=".RecyclerView.RecyclerViewAndCardViewActivity" />
+        <activity android:name=".AutoCompleteText.AutoCompleteTextViewActivity"></activity>
     </application>
 
 </manifest>

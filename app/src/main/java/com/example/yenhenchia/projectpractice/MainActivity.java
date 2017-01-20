@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
+import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
@@ -50,6 +51,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeImageListView         = 15;
     private static final int itemTypeExpandableListView    = 16;
     private static final int itemTypeRecyclerView          = 17;
+    private static final int itemTypeAutoCompleteText      = 18;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,6 +198,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, RecyclerViewAndCardViewActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeAutoCompleteText: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, AutoCompleteTextViewActivity.class);
                     startActivity(intent);
                 }
                     break;
