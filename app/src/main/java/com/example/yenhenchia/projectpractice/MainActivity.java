@@ -24,6 +24,7 @@ import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
 import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardViewActivity;
 import com.example.yenhenchia.projectpractice.RelativeLayout.RelativeLayoutActivity;
 import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity;
+import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleMainFragment;
 import com.example.yenhenchia.projectpractice.Spinner.SpinnerActivity;
@@ -52,6 +53,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeExpandableListView    = 16;
     private static final int itemTypeRecyclerView          = 17;
     private static final int itemTypeAutoCompleteText      = 18;
+    private static final int itemTypeSeekBarAndRatingBar   = 19;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,6 +207,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, AutoCompleteTextViewActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSeekBarAndRatingBar: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SeekBarAndRatingBarActivity.class);
                     startActivity(intent);
                 }
                     break;
