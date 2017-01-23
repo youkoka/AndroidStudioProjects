@@ -44,7 +44,8 @@
         <activity android:name=".ExpandableListView.ExpandListViewActivity" />
         <activity android:name=".RecyclerView.RecyclerViewAndCardViewActivity" />
         <activity android:name=".AutoCompleteText.AutoCompleteTextViewActivity" />
-        <activity android:name=".SeekBarAndRatingBar.SeekBarAndRatingBarActivity"></activity>
+        <activity android:name=".SeekBarAndRatingBar.SeekBarAndRatingBarActivity" />
+        <activity android:name=".DateAndTimePicker.DateAndTimePickerActivity"></activity>
     </application>
 
 </manifest>

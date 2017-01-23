@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
+import com.example.yenhenchia.projectpractice.DateAndTimePicker.DateAndTimePickerActivity;
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
 import com.example.yenhenchia.projectpractice.ExpandableListView.ExpandListViewActivity;
 import com.example.yenhenchia.projectpractice.GridView.GridViewActivity;
@@ -34,26 +35,27 @@ import com.example.yenhenchia.projectpractice.ViewAnimation.ViewAnimationActivit
 
 public class MainActivity extends ListActivity {
 
-    private static final int itemTypeSpinner               = 0;
-    private static final int itemTypeRadioButton           = 1;
-    private static final int itemTypeNumberPicker          = 2;
-    private static final int itemTypeScrollViewAndCheckbox = 3;
-    private static final int itemTypeLinearlayout          = 4;
-    private static final int itemTypeTableLayout           = 5;
-    private static final int itemTypeRelativeLayout        = 6;
-    private static final int itemTypeButtonSelector        = 7;
-    private static final int itemTypeCoordinatorLayout     = 8;
-    private static final int itemTypeImageButtonAndView    = 9;
-    private static final int itemTypeGridView              = 10;
-    private static final int itemTypeViewAnimation         = 11;
-    private static final int itemTypeDrawableAnimation     = 12;
-    private static final int itemTypePropertyAnimation     = 13;
-    private static final int itemTypeSimpleFragment        = 14;
-    private static final int itemTypeImageListView         = 15;
-    private static final int itemTypeExpandableListView    = 16;
-    private static final int itemTypeRecyclerView          = 17;
-    private static final int itemTypeAutoCompleteText      = 18;
-    private static final int itemTypeSeekBarAndRatingBar   = 19;
+    private static final int itemTypeSpinner                = 0;
+    private static final int itemTypeRadioButton            = 1;
+    private static final int itemTypeNumberPicker           = 2;
+    private static final int itemTypeScrollViewAndCheckbox  = 3;
+    private static final int itemTypeLinearlayout           = 4;
+    private static final int itemTypeTableLayout            = 5;
+    private static final int itemTypeRelativeLayout         = 6;
+    private static final int itemTypeButtonSelector         = 7;
+    private static final int itemTypeCoordinatorLayout      = 8;
+    private static final int itemTypeImageButtonAndView     = 9;
+    private static final int itemTypeGridView               = 10;
+    private static final int itemTypeViewAnimation          = 11;
+    private static final int itemTypeDrawableAnimation      = 12;
+    private static final int itemTypePropertyAnimation      = 13;
+    private static final int itemTypeSimpleFragment         = 14;
+    private static final int itemTypeImageListView          = 15;
+    private static final int itemTypeExpandableListView     = 16;
+    private static final int itemTypeRecyclerView           = 17;
+    private static final int itemTypeAutoCompleteText       = 18;
+    private static final int itemTypeSeekBarAndRatingBar    = 19;
+    private static final int itemTypeDateAndTimePicker      = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,6 +216,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SeekBarAndRatingBarActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeDateAndTimePicker: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, DateAndTimePickerActivity.class);
                     startActivity(intent);
                 }
                     break;
