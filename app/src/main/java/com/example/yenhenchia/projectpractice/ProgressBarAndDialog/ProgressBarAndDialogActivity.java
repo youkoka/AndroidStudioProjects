@@ -1,10 +1,14 @@
 package com.example.yenhenchia.projectpractice.ProgressBarAndDialog;
 
+import android.app.ProgressDialog;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimationActivity;
 import com.example.yenhenchia.projectpractice.R;
 
 import java.lang.ref.WeakReference;
@@ -24,19 +28,26 @@ public class ProgressBarAndDialogActivity extends AppCompatActivity {
 
     public final StaticHandler staticHandler = new StaticHandler(this);
 
+    private Button btnProgressDialog;
+
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_bar_and_dialog);
 
+        this.btnProgressDialog = (Button)findViewById(R.id.btnProgressDialog);
+        this.btnProgressDialog.setOnClickListener(onClickListener);
+
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressHorizontal);
-        /*
+
         DoLengthWork doLengthWork = new DoLengthWork();
         doLengthWork.setHandler(staticHandler);
         doLengthWork.setProgressBar(progressBar);
-        doLengthWork.start();
-        */
+//        doLengthWork.start();
 
+        /*
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -94,5 +105,34 @@ public class ProgressBarAndDialogActivity extends AppCompatActivity {
                 }while(true);
             }
         }).start();
+        */
     }
+
+    private Button.OnClickListener onClickListener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+            progressDialog = ProgressDialog.show(ProgressBarAndDialogActivity.this, "test", "2", true);
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    try {
+
+                        Thread.sleep(3000);
+                    }
+                    catch (InterruptedException e) {
+
+                        e.printStackTrace();
+                    }
+                    finally {
+
+                        progressDialog.dismiss();
+                    }
+                }
+            }).start();
+        }
+    };
 }
