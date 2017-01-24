@@ -20,6 +20,7 @@ import com.example.yenhenchia.projectpractice.GridView.GridViewActivity;
 import com.example.yenhenchia.projectpractice.ImageButtonAndView.ImageButtonAndViewActivity;
 import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivity;
 import com.example.yenhenchia.projectpractice.Linearlayout.LinearlayoutActivity;
+import com.example.yenhenchia.projectpractice.ProgressBarAndDialog.ProgressBarAndDialogActivity;
 import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimationActivity;
 import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
 import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardViewActivity;
@@ -56,6 +57,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeAutoCompleteText       = 18;
     private static final int itemTypeSeekBarAndRatingBar    = 19;
     private static final int itemTypeDateAndTimePicker      = 20;
+    private static final int itemTypeProgressBarAndDialog   = 21;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -223,6 +225,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, DateAndTimePickerActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeProgressBarAndDialog: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ProgressBarAndDialogActivity.class);
                     startActivity(intent);
                 }
                     break;

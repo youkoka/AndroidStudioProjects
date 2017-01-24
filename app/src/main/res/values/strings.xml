@@ -24,6 +24,7 @@
         <item>AutoCompleteTextView</item>
         <item>SeekBarAndRatingBar</item>
         <item>DateAndTimePicker</item>
+        <item>ProgressBarAndDialog</item>
 
     </string-array>
 
@@ -74,4 +75,11 @@
     <string name="ratingBar_process">RatingBar的Progress值:</string>
 
     <string name="timePicker">Time:</string>
+
+    <string name="progressBarDefault">ProgressBarDefault</string>
+    <string name="progressBarHorizontal">ProgressBarHorizontal</string>
+    <string name="progressBarLarge">ProgressBarLarge</string>
+    <string name="progressBarSmall">ProgressBarSmall</string>
+    <string name="progressDialog">ProgressDialog</string>
+
 </resources>

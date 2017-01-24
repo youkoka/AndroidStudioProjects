@@ -45,7 +45,8 @@
         <activity android:name=".RecyclerView.RecyclerViewAndCardViewActivity" />
         <activity android:name=".AutoCompleteText.AutoCompleteTextViewActivity" />
         <activity android:name=".SeekBarAndRatingBar.SeekBarAndRatingBarActivity" />
-        <activity android:name=".DateAndTimePicker.DateAndTimePickerActivity"></activity>
+        <activity android:name=".DateAndTimePicker.DateAndTimePickerActivity" />
+        <activity android:name=".ProgressBarAndDialog.ProgressBarAndDialogActivity"></activity>
     </application>
 
 </manifest>
