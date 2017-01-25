@@ -28,17 +28,20 @@ public class ProgressBarAndDialogActivity extends AppCompatActivity {
 
     public final StaticHandler staticHandler = new StaticHandler(this);
 
-    private Button btnProgressDialog;
+    private Button btnProgressDefault, btnProgressHorizontal;
 
-    private ProgressDialog progressDialog;
+    private ProgressDialog progressDefaultDialog, progressHorizontalDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_bar_and_dialog);
 
-        this.btnProgressDialog = (Button)findViewById(R.id.btnProgressDialog);
-        this.btnProgressDialog.setOnClickListener(onClickListener);
+        this.btnProgressDefault = (Button)findViewById(R.id.btnProgressDefaultDialog);
+        this.btnProgressDefault.setOnClickListener(onDefaultClickListener);
+
+        this.btnProgressHorizontal = (Button)findViewById(R.id.btnProgressHorizontalDialog);
+        this.btnProgressHorizontal.setOnClickListener(onHorizontalClickListener);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressHorizontal);
 
@@ -108,12 +111,12 @@ public class ProgressBarAndDialogActivity extends AppCompatActivity {
         */
     }
 
-    private Button.OnClickListener onClickListener = new Button.OnClickListener() {
+    private Button.OnClickListener onDefaultClickListener = new Button.OnClickListener() {
 
         @Override
         public void onClick(View v) {
 
-            progressDialog = ProgressDialog.show(ProgressBarAndDialogActivity.this, "test", "2", true);
+            progressDefaultDialog = ProgressDialog.show(ProgressBarAndDialogActivity.this, "test", "2", true, true);
 
             new Thread(new Runnable() {
                 @Override
@@ -129,8 +132,60 @@ public class ProgressBarAndDialogActivity extends AppCompatActivity {
                     }
                     finally {
 
-                        progressDialog.dismiss();
+                        progressDefaultDialog.dismiss();
                     }
+                }
+            }).start();
+        }
+    };
+
+    private Button.OnClickListener onHorizontalClickListener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+            progressHorizontalDialog = new ProgressDialog(ProgressBarAndDialogActivity.this);
+            progressHorizontalDialog.setTitle("Horizontal");
+            progressHorizontalDialog.setMessage("Waiting...");
+            progressHorizontalDialog.setIcon(android.R.drawable.ic_dialog_info);
+            progressHorizontalDialog.setCancelable(false);
+            progressHorizontalDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            progressHorizontalDialog.setProgress(0);
+            progressHorizontalDialog.setMax(100);
+            progressHorizontalDialog.show();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    do {
+                        try {
+
+                            Thread.sleep(100);
+                        }
+                        catch (InterruptedException e) {
+
+                            e.printStackTrace();
+                        }
+
+                        staticHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                int length = progressHorizontalDialog.getProgress();
+                                length++;
+                                progressHorizontalDialog.setProgress(length);
+                            }
+                        });
+
+                        if (progressHorizontalDialog.getProgress() >= 100) {
+
+                            break;
+                        }
+
+                    }while(true);
+
+                    progressHorizontalDialog.dismiss();
                 }
             }).start();
         }

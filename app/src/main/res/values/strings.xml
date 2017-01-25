@@ -80,6 +80,7 @@
     <string name="progressBarHorizontal">ProgressBarHorizontal</string>
     <string name="progressBarLarge">ProgressBarLarge</string>
     <string name="progressBarSmall">ProgressBarSmall</string>
-    <string name="progressDialog">ProgressDialog</string>
+    <string name="progressDefaultDialog">ProgressDefaultDialog</string>
+    <string name="progressHorizontalDialog">ProgressHorizontalDialog</string>
 
 </resources>
