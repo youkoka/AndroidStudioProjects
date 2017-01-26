@@ -46,7 +46,8 @@
         <activity android:name=".AutoCompleteText.AutoCompleteTextViewActivity" />
         <activity android:name=".SeekBarAndRatingBar.SeekBarAndRatingBarActivity" />
         <activity android:name=".DateAndTimePicker.DateAndTimePickerActivity" />
-        <activity android:name=".ProgressBarAndDialog.ProgressBarAndDialogActivity"></activity>
+        <activity android:name=".ProgressBarAndDialog.ProgressBarAndDialogActivity" />
+        <activity android:name=".AlertDialog.AlertDialogActivity"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
+import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
@@ -58,6 +59,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSeekBarAndRatingBar    = 19;
     private static final int itemTypeDateAndTimePicker      = 20;
     private static final int itemTypeProgressBarAndDialog   = 21;
+    private static final int itemTypeAlertDialog            = 22;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,7 +164,7 @@ public class MainActivity extends ListActivity {
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ViewAnimationActivity.class);
                     startActivity(intent);
-//                    overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
+                    overridePendingTransition(R.anim.trans_left_in, R.anim.trans_left_out);
                 }
                     break;
                 case itemTypeDrawableAnimation: {
@@ -232,6 +234,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ProgressBarAndDialogActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeAlertDialog: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, AlertDialogActivity.class);
                     startActivity(intent);
                 }
                     break;

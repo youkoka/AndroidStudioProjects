@@ -132,4 +132,11 @@ public class ViewAnimationActivity extends AppCompatActivity implements ViewSwit
             imageSwitcher.setImageResource(imgAry[i]);
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        overridePendingTransition(R.anim.trans_right_out, R.anim.trans_right_in);
+    }
 }

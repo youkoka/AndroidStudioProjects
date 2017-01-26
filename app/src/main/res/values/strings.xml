@@ -25,6 +25,7 @@
         <item>SeekBarAndRatingBar</item>
         <item>DateAndTimePicker</item>
         <item>ProgressBarAndDialog</item>
+        <item>AlertDialog</item>
 
     </string-array>
 

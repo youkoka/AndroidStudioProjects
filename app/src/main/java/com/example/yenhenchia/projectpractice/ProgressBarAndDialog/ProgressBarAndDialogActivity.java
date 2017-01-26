@@ -116,7 +116,7 @@ public class ProgressBarAndDialogActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            progressDefaultDialog = ProgressDialog.show(ProgressBarAndDialogActivity.this, "test", "2", true, true);
+            progressDefaultDialog = ProgressDialog.show(ProgressBarAndDialogActivity.this, "Default", "3秒關閉", true, true);
 
             new Thread(new Runnable() {
                 @Override
