@@ -48,7 +48,8 @@
         <activity android:name=".DateAndTimePicker.DateAndTimePickerActivity" />
         <activity android:name=".ProgressBarAndDialog.ProgressBarAndDialogActivity" />
         <activity android:name=".AlertDialog.AlertDialogActivity" />
-        <activity android:name=".SnackBar.SnackBarActivity"></activity>
+        <activity android:name=".SnackBar.SnackBarActivity" />
+        <activity android:name=".CustomDialog.CustomDialogActivity"></activity>
     </application>
 
 </manifest>

@@ -27,6 +27,7 @@
         <item>ProgressBarAndDialog</item>
         <item>AlertDialog</item>
         <item>SnackBar</item>
+        <item>CustomDialog</item>
 
     </string-array>
 

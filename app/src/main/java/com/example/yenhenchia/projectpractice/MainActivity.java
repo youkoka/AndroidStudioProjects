@@ -14,6 +14,7 @@ import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
+import com.example.yenhenchia.projectpractice.CustomDialog.CustomDialogActivity;
 import com.example.yenhenchia.projectpractice.DateAndTimePicker.DateAndTimePickerActivity;
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
 import com.example.yenhenchia.projectpractice.ExpandableListView.ExpandListViewActivity;
@@ -62,6 +63,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeProgressBarAndDialog   = 21;
     private static final int itemTypeAlertDialog            = 22;
     private static final int itemTypeSnackBar               = 23;
+    private static final int itemTypeCustomDialog           = 24;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -250,6 +252,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SnackBarActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeCustomDialog: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, CustomDialogActivity.class);
                     startActivity(intent);
                 }
                     break;
