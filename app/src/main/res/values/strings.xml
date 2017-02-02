@@ -26,6 +26,7 @@
         <item>DateAndTimePicker</item>
         <item>ProgressBarAndDialog</item>
         <item>AlertDialog</item>
+        <item>SnackBar</item>
 
     </string-array>
 
