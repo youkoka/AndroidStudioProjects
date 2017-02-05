@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import com.example.yenhenchia.projectpractice.R;
 
+import java.util.ArrayList;
+
 public class SimpleIntentReceivedActivity extends AppCompatActivity {
 
     private TextView txtIntentResult;
@@ -26,7 +28,34 @@ public class SimpleIntentReceivedActivity extends AppCompatActivity {
         String act = intent.getAction();
         String scheme = intent.getScheme();
 
-        if (scheme.equals("http")) {
+        Bundle bundle = intent.getExtras();
+
+        if (!bundle.isEmpty()) {
+
+            int value = bundle.getInt("Int");
+            String s = bundle.getString("String");
+
+            ArrayList intArrayList = bundle.getIntegerArrayList("IntAry");
+
+            ArrayList strArrayList = intent.getStringArrayListExtra("StrAry");
+
+            String emptyStr = intent.getStringExtra("null");
+
+            String str = "You receive a request of intent and data is : " + value + s + emptyStr;
+
+            if (intArrayList != null) {
+
+                str += intArrayList.toString();
+            }
+
+            if (strArrayList != null) {
+
+                str += strArrayList.toString();
+            }
+
+            this.txtIntentResult.setText(str);
+        }
+        else if (scheme.equals("http")) {
 
             String str = "You receive a request of intent to show web view, data is : " + intent.getData().toString();
 

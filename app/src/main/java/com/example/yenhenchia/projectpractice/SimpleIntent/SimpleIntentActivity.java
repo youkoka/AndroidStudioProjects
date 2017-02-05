@@ -8,13 +8,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.yenhenchia.projectpractice.MainActivity;
 import com.example.yenhenchia.projectpractice.R;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class SimpleIntentActivity extends AppCompatActivity {
 
-    private Button btnWeb, btnMp3, btnImage;
+    private Button btnWeb, btnMp3, btnImage, btnSendData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class SimpleIntentActivity extends AppCompatActivity {
 
         this.btnImage = (Button) findViewById(R.id.btnImg);
         this.btnImage.setOnClickListener(onImageClickListener);
+
+        this.btnSendData = (Button) findViewById(R.id.btnSendData);
+        this.btnSendData.setOnClickListener(onSendClickListener);
     }
 
     private Button.OnClickListener onWebClickListener = new Button.OnClickListener() {
@@ -78,6 +83,33 @@ public class SimpleIntentActivity extends AppCompatActivity {
                 intent.setDataAndType(Uri.fromFile(file), "image/*");
                 startActivity(intent);
             }
+        }
+    };
+
+    private Button.OnClickListener onSendClickListener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+            Intent intent = new Intent(SimpleIntentActivity.this, SimpleIntentReceivedActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("Int", 10);
+            bundle.putString("String", "test");
+            bundle.putIntegerArrayList("IntAry", new ArrayList<Integer>(){{
+                add(1);
+                add(2);
+                add(3);
+            }});
+
+            intent.putExtras(bundle);
+            //! can not put list object
+            intent.putExtra("StrAry", new ArrayList<String>(){{
+                add("123");
+                add("456");
+                add("789");
+            }});
+
+            startActivity(intent);
         }
     };
 }

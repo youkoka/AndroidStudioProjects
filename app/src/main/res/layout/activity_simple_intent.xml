@@ -29,6 +29,12 @@
         android:id="@+id/btnImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="顯示圖片" />
+        android:text="顯示圖片"
+        android:layout_marginBottom="10dp"/>
 
+    <Button
+        android:id="@+id/btnSendData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="附帶資料" />
 </LinearLayout>
