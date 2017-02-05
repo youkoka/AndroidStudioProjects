@@ -31,6 +31,7 @@ import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAn
 import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleMainFragment;
+import com.example.yenhenchia.projectpractice.SimpleIntent.SimpleIntentActivity;
 import com.example.yenhenchia.projectpractice.SnackBar.SnackBarActivity;
 import com.example.yenhenchia.projectpractice.Spinner.SpinnerActivity;
 import com.example.yenhenchia.projectpractice.NumberPicker.NumberPickerActivity;
@@ -64,6 +65,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeAlertDialog            = 22;
     private static final int itemTypeSnackBar               = 23;
     private static final int itemTypeCustomDialog           = 24;
+    private static final int itemTypeSimpleIntent           = 25;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -259,6 +261,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, CustomDialogActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSimpleIntent: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SimpleIntentActivity.class);
                     startActivity(intent);
                 }
                     break;

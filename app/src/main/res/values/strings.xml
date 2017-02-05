@@ -28,7 +28,7 @@
         <item>AlertDialog</item>
         <item>SnackBar</item>
         <item>CustomDialog</item>
-
+        <item>SimpleIntent</item>
     </string-array>
 
     <string name="sex">性別:</string>
