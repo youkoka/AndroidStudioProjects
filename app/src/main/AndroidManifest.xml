@@ -50,7 +50,26 @@
         <activity android:name=".AlertDialog.AlertDialogActivity" />
         <activity android:name=".SnackBar.SnackBarActivity" />
         <activity android:name=".CustomDialog.CustomDialogActivity" />
-        <activity android:name=".SimpleIntent.SimpleIntentActivity"></activity>
+        <activity android:name=".SimpleIntent.SimpleIntentActivity" />
+        <activity android:name=".SimpleIntent.SimpleIntentReceivedActivity"
+                  android:label="SimpleIntentReceived">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
