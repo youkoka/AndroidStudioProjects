@@ -36,5 +36,20 @@
         android:id="@+id/btnSendData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="附帶資料" />
+        android:text="附帶資料"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnReceiveData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取得回傳資料"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/txtReceive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
+
 </LinearLayout>
