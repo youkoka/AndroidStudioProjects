@@ -29,6 +29,7 @@ import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardVi
 import com.example.yenhenchia.projectpractice.RelativeLayout.RelativeLayoutActivity;
 import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity;
 import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
+import com.example.yenhenchia.projectpractice.SimpleBroadcast.SimpleBroadcastActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleMainFragment;
 import com.example.yenhenchia.projectpractice.SimpleIntent.SimpleIntentActivity;
@@ -66,6 +67,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSnackBar               = 23;
     private static final int itemTypeCustomDialog           = 24;
     private static final int itemTypeSimpleIntent           = 25;
+    private static final int itemTypeSimpleBroadcast        = 26;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -268,6 +270,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SimpleIntentActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSimpleBroadcast: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SimpleBroadcastActivity.class);
                     startActivity(intent);
                 }
                     break;
