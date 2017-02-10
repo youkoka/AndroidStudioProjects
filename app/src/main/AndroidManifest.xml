@@ -77,15 +77,22 @@
                 <data android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".SimpleBroadcast.SimpleBroadcastActivity"></activity>
+        <activity android:name=".SimpleBroadcast.SimpleBroadcastActivity" />
 
-        <receiver android:name=".SimpleBroadcast.MyBroadcastReceive1"
-                    android:label="receive1">
-
+        <receiver
+            android:name=".SimpleBroadcast.MyBroadcastReceive1"
+            android:label="receive1">
             <intent-filter>
                 <action android:name="com.android.MyBroadcastReceive1" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".SimpleService.SimpleServiceActivity" />
+
+        <service
+            android:name=".SimpleService.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

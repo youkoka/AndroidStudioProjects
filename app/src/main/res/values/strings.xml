@@ -30,6 +30,7 @@
         <item>CustomDialog</item>
         <item>SimpleIntent</item>
         <item>SimpleBroadcast</item>
+        <item>SimpleService</item>
 
     </string-array>
 
