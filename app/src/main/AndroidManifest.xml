@@ -94,16 +94,19 @@
             android:enabled="true"
             android:exported="true" />
 
-        <receiver android:name=".SimpleAppWidget.SimpleAppWidgetActivity"
-                    android:label="App Widget">
-
+        <receiver
+            android:name=".SimpleAppWidget.SimpleAppWidgetActivity"
+            android:label="App Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
 
-            <meta-data android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_configure"/>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_configure" />
         </receiver>
+
+        <activity android:name=".CustomAppWidget.CustomAppWidget"></activity>
     </application>
 
 </manifest>
