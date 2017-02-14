@@ -9,6 +9,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
+import android.widget.RemoteViews;
+
+import com.example.yenhenchia.projectpractice.R;
 
 /**
  * Created by yenhenchia on 2017/2/13.
@@ -52,6 +55,11 @@ public class CustomAppWidgetProvider extends AppWidgetProvider {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
 
         Log.d(TAG_LOG, "onUpdate!");
+
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.custom_app_widget_layout);
+        remoteViews.setTextViewText(R.id.txvCustomAppWidget, "This is update CustomAppWidget");
+        ComponentName componentName = new ComponentName(context, CustomAppWidgetProvider.class);
+        appWidgetManager.updateAppWidget(componentName, remoteViews);
     }
 
     @Override

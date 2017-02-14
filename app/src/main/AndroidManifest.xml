@@ -108,20 +108,21 @@
 
         <receiver
             android:name=".CustomAppWidget.CustomAppWidgetProvider"
-            android:label="Custom APP Label">
+            android:exported="true"
+            android:label="Custom APP Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.android.MY_OWN_WIDGET_UPDATE" />
             </intent-filter>
 
             <meta-data
-                android:name="android.customappWidget.provider"
+                android:name="android.appwidget.provider"
                 android:resource="@xml/custom_app_widget_configure" />
         </receiver>
 
         <activity android:name=".CustomAppWidget.CustomAppWidgetActivity">
             <intent-filter>
-                <action android:name="android.widget.action.APPWIDGET_CONFIGURE" />
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
     </application>

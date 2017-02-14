@@ -7,9 +7,10 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
-import android.icu.util.Calendar;
+import java.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.RemoteViews;
 
 import com.example.yenhenchia.projectpractice.R;
 
@@ -45,9 +46,13 @@ public class CustomAppWidgetActivity extends AppCompatActivity {
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.add(Calendar.SECOND, 5);
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 20 * 1000, pendingIntent);
-
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 5 * 1000, pendingIntent);
         CustomAppWidgetProvider.SaveAlarmManager(alarmManager, pendingIntent);
+
+        RemoteViews viewAppWidget = new RemoteViews(getPackageName(), R.layout.custom_app_widget_layout);
+        viewAppWidget.setTextViewText(R.id.txvCustomAppWidget, "This is initial CustomAppWidget");
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
+        appWidgetManager.updateAppWidget(mAppWidgetId, viewAppWidget);
 
         Intent itAppWidgetConfigResult = new Intent();
 
