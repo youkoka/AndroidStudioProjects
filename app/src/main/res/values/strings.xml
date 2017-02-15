@@ -32,6 +32,7 @@
         <item>SimpleBroadcast</item>
         <item>SimpleService</item>
         <item>ActivityLifecycle</item>
+        <item>ActionBarMenu</item>
 
     </string-array>
 

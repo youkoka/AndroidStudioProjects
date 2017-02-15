@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
+import com.example.yenhenchia.projectpractice.ActionBarMenu.ActionBarMenuActivity;
 import com.example.yenhenchia.projectpractice.ActivityLifecycle.ActivityLifecycleActivity;
 import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
@@ -74,6 +75,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSimpleBroadcast        = 26;
     private static final int itemTypeSimpleService          = 27;
     private static final int itemTypeActivityLifecycle      = 28;
+    private static final int itemTypeActivityActionBarMenu  = 29;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -302,6 +304,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ActivityLifecycleActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeActivityActionBarMenu: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ActionBarMenuActivity.class);
                     startActivity(intent);
                 }
                     break;

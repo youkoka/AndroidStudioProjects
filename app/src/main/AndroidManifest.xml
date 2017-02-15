@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yenhenchia.projectpractice">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -150,7 +152,15 @@
                 android:resource="@xml/app_widget_configure_3" />
         </receiver>
 
-        <activity android:name=".ActivityLifecycle.ActivityLifecycleActivity"></activity>
+        <activity android:name=".ActivityLifecycle.ActivityLifecycleActivity" />
+        <activity
+            android:name=".ActionBarMenu.ActionBarMenuActivity"
+            android:label="ActionBarMenu" />
+
+        <service
+            android:name=".ActionBarMenu.ActionBarMediaPlayerService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
