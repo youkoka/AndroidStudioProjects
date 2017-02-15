@@ -105,7 +105,6 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_configure" />
         </receiver>
-
         <receiver
             android:name=".CustomAppWidget.CustomAppWidgetProvider"
             android:exported="true"
@@ -126,27 +125,32 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".SimpleAppWidget.SimpleAppWidgetProvider2"
-                android:label="SimpleAppWidget2">
+        <receiver
+            android:name=".SimpleAppWidget.SimpleAppWidgetProvider2"
+            android:label="SimpleAppWidget2">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.android.SIMPLE_APP_WIDGET_2" />
             </intent-filter>
 
-            <meta-data android:name="android.appwidget.provider"
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_configure_2" />
         </receiver>
-
-        <receiver android:name=".SimpleAppWidget.SimpleAppWidgetProvider3"
-                android:label="SimpleAppWidget3">
+        <receiver
+            android:name=".SimpleAppWidget.SimpleAppWidgetProvider3"
+            android:label="SimpleAppWidget3">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.android.SIMPLE_APP_WIDGET_3" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_configure_3"/>
+                android:resource="@xml/app_widget_configure_3" />
         </receiver>
+
+        <activity android:name=".ActivityLifecycle.ActivityLifecycleActivity"></activity>
     </application>
 
 </manifest>

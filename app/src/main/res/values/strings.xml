@@ -31,6 +31,7 @@
         <item>SimpleIntent</item>
         <item>SimpleBroadcast</item>
         <item>SimpleService</item>
+        <item>ActivityLifecycle</item>
 
     </string-array>
 

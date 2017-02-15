@@ -3,6 +3,8 @@ package com.example.yenhenchia.projectpractice;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
@@ -10,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
+import com.example.yenhenchia.projectpractice.ActivityLifecycle.ActivityLifecycleActivity;
 import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
@@ -70,10 +73,16 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSimpleIntent           = 25;
     private static final int itemTypeSimpleBroadcast        = 26;
     private static final int itemTypeSimpleService          = 27;
+    private static final int itemTypeActivityLifecycle      = 28;
+
+    private static final String TAG_LOG = "Main Lifecycle!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.d(TAG_LOG, "onCreate!");
+
         setContentView(R.layout.activity_main);
 
         ArrayAdapter<CharSequence> arrAdpList = ArrayAdapter.createFromResource(this, R.array.listItem,
@@ -289,7 +298,63 @@ public class MainActivity extends ListActivity {
                     startActivity(intent);
                 }
                     break;
+                case itemTypeActivityLifecycle: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ActivityLifecycleActivity.class);
+                    startActivity(intent);
+                }
+                    break;
             }
         }
     };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Log.d(TAG_LOG, "onStart!");
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        Log.d(TAG_LOG, "onPostCreate!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(TAG_LOG, "onResume!");
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+        Log.d(TAG_LOG, "onPostResume!");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.d(TAG_LOG, "onPause!");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.d(TAG_LOG, "onStop!");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.d(TAG_LOG, "onDestroy!");
+    }
 }
