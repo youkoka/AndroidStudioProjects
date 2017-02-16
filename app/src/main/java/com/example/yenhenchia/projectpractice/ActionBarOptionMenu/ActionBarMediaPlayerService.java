@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.os.IBinder;
 
 import java.io.File;
+import java.io.IOException;
 
 public class ActionBarMediaPlayerService extends Service {
 
@@ -39,19 +40,16 @@ public class ActionBarMediaPlayerService extends Service {
 
         String mp3File = Environment.getExternalStorageDirectory().getPath() +
                 File.separator + "Music" +
-                File.separator +"9.BONJOUR!.mp3";
+                File.separator +"V6-Darling.mp3";
+
         File file = new File(mp3File);
-        if (file.exists()) {
+        boolean isExist = file.exists();
+        if (isExist) {
 
             Uri uri = Uri.fromFile(file);
+            mediaPlayer = MediaPlayer.create(this, uri);
+            mediaPlayer.start();
 
-            Intent it = new Intent(Intent.ACTION_VIEW);
-
-            it.setDataAndType(Uri.fromFile(file), "audio/*");
-
-            startActivity(it);
-//            mediaPlayer = MediaPlayer.create(this, uri);
-//            mediaPlayer.start();
         }
 
         return super.onStartCommand(intent, flags, startId);
