@@ -1,4 +1,4 @@
-package com.example.yenhenchia.projectpractice.ActionBarMenu;
+package com.example.yenhenchia.projectpractice.ActionBarOptionMenu;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -30,6 +30,7 @@ public class ActionBarMenuActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
+        /*
         SubMenu subMenu = menu.addSubMenu(0, MENU_MUSIC, 0, "背景音樂").setIcon(android.R.drawable.ic_media_ff);
         subMenu.add(0, MENU_PALY_MUSIC, 0, "播放背景音樂");
         subMenu.add(0, MENU_STOP_PLAYING_MENU, 1, "停止播放背景音樂");
@@ -37,7 +38,9 @@ public class ActionBarMenuActivity extends AppCompatActivity {
         menu.add(0, MENU_TEXTLENGTH, 1, "測試字串長度測試字串長度測試字串長度測試字串長度測試字串長度測試字串長度測試字串長度測試字串長度").setIcon(android.R.drawable.ic_dialog_info);
         menu.add(0, MENU_ABOUT, 2, "關於這個程式").setIcon(android.R.drawable.ic_dialog_info);
         menu.add(0, MENU_EXIT, 3, "結束").setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+        */
 
+        getMenuInflater().inflate(R.menu.option_menu_linear_layout, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -77,6 +80,31 @@ public class ActionBarMenuActivity extends AppCompatActivity {
             }
                 break;
         }
+        /*
+        switch (item.getItemId()) {
+
+            case R.id.menuItemPlayBackgroundMusic: {
+
+                Log.d("onContextItemSelected", "menuItemPlayBackgroundMusic");
+            }
+            break;
+            case R.id.menuItemStopBackgroundMusic: {
+
+                Log.d("onContextItemSelected", "menuItemStopBackgroundMusic");
+            }
+            break;
+            case R.id.menuItemAbort: {
+
+                Log.d("onContextItemSelected", "menuItemAbort");
+            }
+            break;
+            case R.id.menuItemExit: {
+
+                Log.d("onContextItemSelected", "menuItemExit");
+            }
+            break;
+        }
+        */
         return super.onOptionsItemSelected(item);
     }
 }

@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.RadioButton;
 
-import com.example.yenhenchia.projectpractice.ActionBarMenu.ActionBarMenuActivity;
+import com.example.yenhenchia.projectpractice.ActionBarContextMenu.ActionBarContextMenuActivity;
+import com.example.yenhenchia.projectpractice.ActionBarOptionMenu.ActionBarMenuActivity;
 import com.example.yenhenchia.projectpractice.ActivityLifecycle.ActivityLifecycleActivity;
 import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
@@ -35,7 +34,6 @@ import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAn
 import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
 import com.example.yenhenchia.projectpractice.SimpleBroadcast.SimpleBroadcastActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
-import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleMainFragment;
 import com.example.yenhenchia.projectpractice.SimpleIntent.SimpleIntentActivity;
 import com.example.yenhenchia.projectpractice.SimpleService.SimpleServiceActivity;
 import com.example.yenhenchia.projectpractice.SnackBar.SnackBarActivity;
@@ -75,7 +73,8 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSimpleBroadcast        = 26;
     private static final int itemTypeSimpleService          = 27;
     private static final int itemTypeActivityLifecycle      = 28;
-    private static final int itemTypeActivityActionBarMenu  = 29;
+    private static final int itemTypeActionBarOptionMenu    = 29;
+    private static final int itemTypeActionBarContextMenu   = 30;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -307,10 +306,17 @@ public class MainActivity extends ListActivity {
                     startActivity(intent);
                 }
                     break;
-                case itemTypeActivityActionBarMenu: {
+                case itemTypeActionBarOptionMenu: {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ActionBarMenuActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeActionBarContextMenu: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ActionBarContextMenuActivity.class);
                     startActivity(intent);
                 }
                     break;

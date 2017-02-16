@@ -154,15 +154,16 @@
 
         <activity android:name=".ActivityLifecycle.ActivityLifecycleActivity" />
         <activity
-            android:name=".ActionBarMenu.ActionBarMenuActivity"
-            android:label="ActionBarMenu">
-
-        </activity>
+            android:name=".ActionBarOptionMenu.ActionBarMenuActivity"
+            android:label="ActionBarMenu"></activity>
 
         <service
-            android:name=".ActionBarMenu.ActionBarMediaPlayerService"
+            android:name=".ActionBarOptionMenu.ActionBarMediaPlayerService"
             android:enabled="true"
             android:exported="true" />
+
+        <activity android:name=".ActionBarContextMenu.ActionBarContextMenuActivity"
+                android:label="ContextMenu"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.yenhenchia.projectpractice.ActionBarMenu;
+package com.example.yenhenchia.projectpractice.ActionBarOptionMenu;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,11 +8,7 @@ import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
 
-import com.example.yenhenchia.projectpractice.SimpleService.MyService;
-
 import java.io.File;
-import java.lang.reflect.Field;
-import java.net.URI;
 
 public class ActionBarMediaPlayerService extends Service {
 

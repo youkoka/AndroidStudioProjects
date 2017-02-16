@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="背景音樂 ">
+
+        <menu>
+            <item android:id="@+id/menuItemPlayBackgroundMusic"
+                android:title="播放背景音樂"/>
+            <item android:id="@+id/menuItemStopBackgroundMusic"
+                android:title="停止背景音樂"/>
+        </menu>
+    </item>
+
+    <item android:id="@+id/menuItemAbort"
+        android:title="關於這個程式"/>
+
+    <item android:id="@+id/menuItemExit"
+        android:title="結束"/>
+
+</menu>
