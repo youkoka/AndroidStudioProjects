@@ -34,6 +34,7 @@
         <item>ActivityLifecycle</item>
         <item>ActionBarOptionMenu</item>
         <item>ActionBarContextMenu</item>
+        <item>ActionItemAndView</item>
 
     </string-array>
 
@@ -92,4 +93,9 @@
     <string name="progressDefaultDialog">ProgressDefaultDialog</string>
     <string name="progressHorizontalDialog">ProgressHorizontalDialog</string>
 
+    <string-array name="regionList">
+        <item>亞洲</item>
+        <item>美洲</item>
+        <item>歐洲</item>
+    </string-array>
 </resources>

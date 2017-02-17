@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menuItemAbout"
+        android:title="關於這個程式"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/menuItemExit"
+        android:title="結束"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"/>
+
+    <item android:id="@+id/menuItemRegion"
+        android:title="選擇地區"
+        app:showAsAction="ifRoom"
+        app:actionLayout="@layout/action_bar_item_view_region"/>
+
+    <item android:id ="@+id/menuItemSearch"
+        android:title="Search"
+        app:showAsAction="ifRoom"
+        app:actionViewClass="android.widget.SearchView"/>
+
+</menu>

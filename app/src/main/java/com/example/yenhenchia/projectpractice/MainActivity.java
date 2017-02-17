@@ -1,5 +1,6 @@
 package com.example.yenhenchia.projectpractice;
 
+import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.ListView;
 
 import com.example.yenhenchia.projectpractice.ActionBarContextMenu.ActionBarContextMenuActivity;
 import com.example.yenhenchia.projectpractice.ActionBarOptionMenu.ActionBarMenuActivity;
+import com.example.yenhenchia.projectpractice.ActionItemAndView.ActionItemAndViewActivity;
 import com.example.yenhenchia.projectpractice.ActivityLifecycle.ActivityLifecycleActivity;
 import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
@@ -75,6 +77,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeActivityLifecycle      = 28;
     private static final int itemTypeActionBarOptionMenu    = 29;
     private static final int itemTypeActionBarContextMenu   = 30;
+    private static final int itemTypeActionViewAndItem      = 31;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -93,6 +96,7 @@ public class MainActivity extends ListActivity {
 
         ListView listView = getListView();
         listView.setOnItemClickListener(onItemClickListener);
+
     }
 
     private AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
@@ -317,6 +321,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ActionBarContextMenuActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeActionViewAndItem: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ActionItemAndViewActivity.class);
                     startActivity(intent);
                 }
                     break;
