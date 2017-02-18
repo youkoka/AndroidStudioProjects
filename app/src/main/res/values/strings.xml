@@ -35,6 +35,7 @@
         <item>ActionBarOptionMenu</item>
         <item>ActionBarContextMenu</item>
         <item>ActionItemAndView</item>
+        <item>NavigationDrawer</item>
 
     </string-array>
 

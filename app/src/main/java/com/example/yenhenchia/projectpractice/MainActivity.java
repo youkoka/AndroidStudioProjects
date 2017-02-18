@@ -27,6 +27,7 @@ import com.example.yenhenchia.projectpractice.GridView.GridViewActivity;
 import com.example.yenhenchia.projectpractice.ImageButtonAndView.ImageButtonAndViewActivity;
 import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivity;
 import com.example.yenhenchia.projectpractice.Linearlayout.LinearlayoutActivity;
+import com.example.yenhenchia.projectpractice.NavigationDrawer.NavigationDrawerActivity;
 import com.example.yenhenchia.projectpractice.ProgressBarAndDialog.ProgressBarAndDialogActivity;
 import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimationActivity;
 import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
@@ -78,6 +79,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeActionBarOptionMenu    = 29;
     private static final int itemTypeActionBarContextMenu   = 30;
     private static final int itemTypeActionViewAndItem      = 31;
+    private static final int itemTypeNavigationDrawer       = 32;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -328,6 +330,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ActionItemAndViewActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeNavigationDrawer: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, NavigationDrawerActivity.class);
                     startActivity(intent);
                 }
                     break;

@@ -165,8 +165,10 @@
         <activity
             android:name=".ActionBarContextMenu.ActionBarContextMenuActivity"
             android:label="ContextMenu" />
-        <activity android:name=".ActionItemAndView.ActionItemAndViewActivity"
-            android:label="ActionBar"></activity>
+        <activity
+            android:name=".ActionItemAndView.ActionItemAndViewActivity"
+            android:label="ActionBar" />
+        <activity android:name=".NavigationDrawer.NavigationDrawerActivity"></activity>
     </application>
 
 </manifest>
