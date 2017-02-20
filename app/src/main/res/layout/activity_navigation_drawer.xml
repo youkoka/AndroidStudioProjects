@@ -33,10 +33,11 @@
         android:layout_marginLeft="-65dp"
         android:background="#ffff3333">
 
-        <Button
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="關閉左側選單"/>
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -50,6 +51,7 @@
         android:background="#3c3c3c">
 
             <Button
+                android:id="@+id/btnRightNavDrawer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="關閉右側選單"/>

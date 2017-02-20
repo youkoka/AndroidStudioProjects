@@ -99,4 +99,16 @@
         <item>美洲</item>
         <item>歐洲</item>
     </string-array>
+
+    <string-array name="weekday">
+
+        <item>星期ㄧ</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+        <item>星期日</item>
+
+    </string-array>
 </resources>
