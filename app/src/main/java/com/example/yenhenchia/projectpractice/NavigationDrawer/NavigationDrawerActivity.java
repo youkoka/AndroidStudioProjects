@@ -30,7 +30,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
         this.drawerLayout = (DrawerLayout)findViewById(R.id.activity_navigation_drawer);
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycleView);
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.navRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         String list[] = getResources().getStringArray(R.array.weekday);
