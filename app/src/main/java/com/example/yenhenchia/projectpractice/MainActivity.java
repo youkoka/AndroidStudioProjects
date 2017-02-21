@@ -34,6 +34,7 @@ import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
 import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardViewActivity;
 import com.example.yenhenchia.projectpractice.RelativeLayout.RelativeLayoutActivity;
 import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity;
+import com.example.yenhenchia.projectpractice.ScrollableSwipe.ScrollableSwipeActivity;
 import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
 import com.example.yenhenchia.projectpractice.SimpleBroadcast.SimpleBroadcastActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
@@ -80,6 +81,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeActionBarContextMenu   = 30;
     private static final int itemTypeActionViewAndItem      = 31;
     private static final int itemTypeNavigationDrawer       = 32;
+    private static final int itemTypeScrollableSwipe        = 33;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -337,6 +339,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, NavigationDrawerActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeScrollableSwipe: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ScrollableSwipeActivity.class);
                     startActivity(intent);
                 }
                     break;

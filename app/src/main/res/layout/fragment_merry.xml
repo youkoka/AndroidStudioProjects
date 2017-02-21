@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.yenhenchia.projectpractice.ScrollableSwipe.MerryFragment">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/sex"/>
+        <Spinner
+            android:id="@+id/spnSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sexList"
+            android:spinnerMode="dialog"
+            android:prompt="@string/sex"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/age"/>
+
+        <EditText
+            android:id="@+id/edtAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phAge"
+            />
+
+        <Button
+            android:id="@+id/btnCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check"/>
+
+        <TextView
+            android:id="@+id/txtSug"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest"/>
+
+</LinearLayout>
