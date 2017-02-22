@@ -37,6 +37,8 @@
         <item>ActionItemAndView</item>
         <item>NavigationDrawer</item>
         <item>ScrollableSwipe</item>
+        <item>TabLayout</item>
+        <item>Notification</item>
 
     </string-array>
 

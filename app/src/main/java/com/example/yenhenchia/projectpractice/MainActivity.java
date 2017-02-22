@@ -28,6 +28,7 @@ import com.example.yenhenchia.projectpractice.ImageButtonAndView.ImageButtonAndV
 import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivity;
 import com.example.yenhenchia.projectpractice.Linearlayout.LinearlayoutActivity;
 import com.example.yenhenchia.projectpractice.NavigationDrawer.NavigationDrawerActivity;
+import com.example.yenhenchia.projectpractice.Notification.NotificationActivity;
 import com.example.yenhenchia.projectpractice.ProgressBarAndDialog.ProgressBarAndDialogActivity;
 import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimationActivity;
 import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
@@ -43,6 +44,7 @@ import com.example.yenhenchia.projectpractice.SimpleService.SimpleServiceActivit
 import com.example.yenhenchia.projectpractice.SnackBar.SnackBarActivity;
 import com.example.yenhenchia.projectpractice.Spinner.SpinnerActivity;
 import com.example.yenhenchia.projectpractice.NumberPicker.NumberPickerActivity;
+import com.example.yenhenchia.projectpractice.TabLayout.TabLayoutActivity;
 import com.example.yenhenchia.projectpractice.TableLayout.TableLayoutActivity;
 import com.example.yenhenchia.projectpractice.ViewAnimation.ViewAnimationActivity;
 
@@ -82,6 +84,8 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeActionViewAndItem      = 31;
     private static final int itemTypeNavigationDrawer       = 32;
     private static final int itemTypeScrollableSwipe        = 33;
+    private static final int itemTypeTabLayout              = 34;
+    private static final int itemTypeNotification           = 35;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -346,6 +350,20 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ScrollableSwipeActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeTabLayout: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, TabLayoutActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeNotification: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, NotificationActivity.class);
                     startActivity(intent);
                 }
                     break;

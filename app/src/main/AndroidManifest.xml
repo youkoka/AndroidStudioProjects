@@ -169,7 +169,9 @@
             android:name=".ActionItemAndView.ActionItemAndViewActivity"
             android:label="ActionBar" />
         <activity android:name=".NavigationDrawer.NavigationDrawerActivity" />
-        <activity android:name=".ScrollableSwipe.ScrollableSwipeActivity"></activity>
+        <activity android:name=".ScrollableSwipe.ScrollableSwipeActivity" />
+        <activity android:name=".TabLayout.TabLayoutActivity" />
+        <activity android:name=".Notification.NotificationActivity"></activity>
     </application>
 
 </manifest>
