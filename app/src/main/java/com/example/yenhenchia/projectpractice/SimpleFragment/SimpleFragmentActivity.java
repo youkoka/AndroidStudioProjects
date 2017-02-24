@@ -1,5 +1,6 @@
 package com.example.yenhenchia.projectpractice.SimpleFragment;
 
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -16,6 +17,12 @@ public class SimpleFragmentActivity extends AppCompatActivity
     private final static String SimpleMainFragmentTag       = "SimpleMainFragmentTag";
     private final static String SimpleResultFragmentTag     = "SimpleResultFragmentTag";
     private final static String SimpleButtonFragmentTag     = "SimpleButtonFragmentTag";
+
+    private final static String GAME_RESULT_KEY                 = "GameResultKey";
+    private final static String TOTAL_SET_COUNT_KEY             = "TotalSetCountKey";
+    private final static String PLAYER_WIN_SET_COUNT_KEY        = "PlayerWinSetCountKey";
+    private final static String CMP_WIN_SET_COUNT_KEY           = "CmpWinSetCountKey";
+    private final static String DRAW_SET_COUNT_KEY              = "DrawSetCountKey";
 
     private int totalSetCount, playerWinSetCount, cmpWinSetCount, drawSetCount;
 
@@ -188,5 +195,44 @@ public class SimpleFragmentActivity extends AppCompatActivity
             }
                 break;
         }
+    }
+
+    @Override
+    public void loadResult() {
+
+        SharedPreferences gameResultData = getSharedPreferences(GAME_RESULT_KEY, MODE_PRIVATE);
+
+        if (gameResultData != null) {
+
+            this.totalSetCount = gameResultData.getInt(TOTAL_SET_COUNT_KEY, 0);
+            this.drawSetCount = gameResultData.getInt(DRAW_SET_COUNT_KEY, 0);
+            this.playerWinSetCount = gameResultData.getInt(PLAYER_WIN_SET_COUNT_KEY, 0);
+            this.cmpWinSetCount = gameResultData.getInt(CMP_WIN_SET_COUNT_KEY, 0);
+
+            if (this.simpleResultFragment != null) {
+
+                this.simpleResultFragment.setGameResult(this.totalSetCount, this.drawSetCount, this.playerWinSetCount, this.cmpWinSetCount);
+            }
+        }
+    }
+
+    @Override
+    public void saveResult() {
+
+        SharedPreferences gameResultData = getSharedPreferences(GAME_RESULT_KEY, MODE_PRIVATE);
+
+        gameResultData.edit().putInt(TOTAL_SET_COUNT_KEY, this.totalSetCount)
+                            .putInt(DRAW_SET_COUNT_KEY, this.drawSetCount)
+                            .putInt(PLAYER_WIN_SET_COUNT_KEY, this.playerWinSetCount)
+                            .putInt(CMP_WIN_SET_COUNT_KEY, this.cmpWinSetCount)
+                            .apply();
+
+    }
+
+    @Override
+    public void clearResult() {
+
+        SharedPreferences gameResultData = getSharedPreferences(GAME_RESULT_KEY, MODE_PRIVATE);
+        gameResultData.edit().clear().apply();
     }
 }

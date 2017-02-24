@@ -27,10 +27,16 @@ public class SimpleButtonFragment extends Fragment {
 
     public interface SimpleButtonIngerface {
 
-        public void resultOfShow(ShowResultType showResultType);
+        void resultOfShow(ShowResultType showResultType);
+
+        void loadResult();
+
+        void saveResult();
+
+        void clearResult();
     }
 
-    private Button btnResult1, btnResutl2, btnResultHide;
+    private Button btnResult1, btnResutl2, btnResultHide, btnLoadResult, btnSaveResult, btnClearResult;
 
     public SimpleButtonIngerface mCallback;
 
@@ -60,6 +66,15 @@ public class SimpleButtonFragment extends Fragment {
         this.btnResultHide = (Button)getView().findViewById(R.id.btnHide);
         this.btnResultHide.setTag(ShowResultType.SHOW_RESULT_TYPE_HIDE);
         this.btnResultHide.setOnClickListener(onClickListener);
+
+        this.btnLoadResult = (Button)getView().findViewById(R.id.btnLoadResult);
+        this.btnLoadResult.setOnClickListener(onLoadClickListener);
+
+        this.btnSaveResult = (Button)getView().findViewById(R.id.btnSaveResult);
+        this.btnSaveResult.setOnClickListener(onSaveClickListener);
+
+        this.btnClearResult = (Button)getView().findViewById(R.id.btnClearResult);
+        this.btnClearResult.setOnClickListener(onClearClickListener);
     }
 
     @Override
@@ -99,4 +114,41 @@ public class SimpleButtonFragment extends Fragment {
             }
         }
     };
+
+    private Button.OnClickListener onLoadClickListener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+            if (mCallback != null) {
+
+                mCallback.loadResult();
+            }
+        }
+    };
+
+    private Button.OnClickListener onSaveClickListener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+            if (mCallback != null) {
+
+                mCallback.saveResult();
+            }
+        }
+    };
+
+    private Button.OnClickListener onClearClickListener = new Button.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+            if (mCallback != null) {
+
+                mCallback.clearResult();
+            }
+        }
+    };
+
 }
