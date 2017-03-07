@@ -34,6 +34,7 @@ import com.example.yenhenchia.projectpractice.PropertyAnimation.PropertyAnimatio
 import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
 import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardViewActivity;
 import com.example.yenhenchia.projectpractice.RelativeLayout.RelativeLayoutActivity;
+import com.example.yenhenchia.projectpractice.SQLite.SQLiteActivity;
 import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity;
 import com.example.yenhenchia.projectpractice.ScrollableSwipe.ScrollableSwipeActivity;
 import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
@@ -86,6 +87,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeScrollableSwipe        = 33;
     private static final int itemTypeTabLayout              = 34;
     private static final int itemTypeNotification           = 35;
+    private static final int itemTypeSQLite                 = 36;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -364,6 +366,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, NotificationActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSQLite: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SQLiteActivity.class);
                     startActivity(intent);
                 }
                     break;

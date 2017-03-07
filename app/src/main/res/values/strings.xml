@@ -39,6 +39,7 @@
         <item>ScrollableSwipe</item>
         <item>TabLayout</item>
         <item>Notification</item>
+        <item>SQLite</item>
 
     </string-array>
 

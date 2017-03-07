@@ -171,7 +171,8 @@
         <activity android:name=".NavigationDrawer.NavigationDrawerActivity" />
         <activity android:name=".ScrollableSwipe.ScrollableSwipeActivity" />
         <activity android:name=".TabLayout.TabLayoutActivity" />
-        <activity android:name=".Notification.NotificationActivity"></activity>
+        <activity android:name=".Notification.NotificationActivity" />
+        <activity android:name=".SQLite.SQLiteActivity"></activity>
     </application>
 
 </manifest>
