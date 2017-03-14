@@ -40,6 +40,7 @@
         <item>TabLayout</item>
         <item>Notification</item>
         <item>SQLite</item>
+        <item>ContentProvider</item>
 
     </string-array>
 

@@ -18,6 +18,7 @@ import com.example.yenhenchia.projectpractice.ActivityLifecycle.ActivityLifecycl
 import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
+import com.example.yenhenchia.projectpractice.ContentProvider.ContentProviderActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
 import com.example.yenhenchia.projectpractice.CustomDialog.CustomDialogActivity;
 import com.example.yenhenchia.projectpractice.DateAndTimePicker.DateAndTimePickerActivity;
@@ -88,6 +89,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeTabLayout              = 34;
     private static final int itemTypeNotification           = 35;
     private static final int itemTypeSQLite                 = 36;
+    private static final int itemTypeContentProvider        = 37;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -373,6 +375,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SQLiteActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeContentProvider: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ContentProviderActivity.class);
                     startActivity(intent);
                 }
                     break;

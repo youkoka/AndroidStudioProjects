@@ -1,8 +1,8 @@
-package com.example.yenhenchia.projectpractice.SQLite;
+package com.example.yenhenchia.projectpractice.ContentProvider;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,41 +11,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.yenhenchia.projectpractice.R;
+import com.example.yenhenchia.projectpractice.SQLite.SQLiteActivity;
 
-public class SQLiteActivity extends AppCompatActivity {
-
-    private static final String DB_FILE = "friends.db", DB_TABLE = "friends";
-
-    private SQLiteDatabase friendDb;
+public class ContentProviderActivity extends AppCompatActivity {
 
     private EditText editName, editSex, editAddress, editShowData;
     private Button btnInsert, btnSearch, btnList;
 
+    private ContentResolver contentResolver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sqlite);
+        setContentView(R.layout.activity_content_provider);
 
-        setTitle("SQLiteDatabase");
-
-        FriendDbOpenHelper friendDbOpenHelper = new FriendDbOpenHelper(getApplicationContext(), DB_FILE, null, 1);
-        friendDb = friendDbOpenHelper.getWritableDatabase();
-
-        Cursor cursor = friendDb.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = '" + DB_TABLE + "'", null);
-
-        if (cursor != null) {
-
-            if (cursor.getCount() == 0) {
-
-                friendDb.execSQL("CREATE TABLE " + DB_TABLE + " (" +
-                                "_id INTEGER PRIMARY_KEY," +
-                                "name TEXT NOT NULL," +
-                                "sex TEXT," +
-                                "address TEXT);");
-            }
-
-            cursor.close();
-        }
+        contentResolver = getContentResolver();
 
         this.editName = (EditText)findViewById(R.id.editName);
         this.editSex = (EditText)findViewById(R.id.editSex);
@@ -62,16 +42,6 @@ public class SQLiteActivity extends AppCompatActivity {
         this.btnList.setOnClickListener(onListClickListener);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if (friendDb != null) {
-
-            friendDb.close();
-        }
-    }
-
     private Button.OnClickListener  onInsertClickListener = new Button.OnClickListener() {
 
         @Override
@@ -83,7 +53,7 @@ public class SQLiteActivity extends AppCompatActivity {
             contentValues.put("sex", editSex.getText().toString());
             contentValues.put("address", editAddress.getText().toString());
 
-            friendDb.insert(DB_TABLE, null, contentValues);
+            contentResolver.insert(FriendContentProvider.CONTENT_URI, contentValues);
         }
     };
 
@@ -92,26 +62,28 @@ public class SQLiteActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
+            String projection[] = new String[]{"name", "sex", "address"};
+
             Cursor c = null;
 
             if (!editName.getText().toString().equals("")) {
 
-                c = friendDb.query(true, DB_TABLE, new String[]{"name", "sex", "address"}, "name=" + "\"" + editName.getText().toString() + "\"", null, null, null, null, null);
+                c = contentResolver.query(FriendContentProvider.CONTENT_URI, projection, "name=" + "\"" + editName.getText().toString() + "\"", null, null);
             }
             else if(editSex.getText().toString().equals("")) {
 
-                c = friendDb.query(true, DB_TABLE, new String[]{"name", "sex", "address"}, "sex=" + "\"" + editSex.getText().toString() + "\"", null, null, null, null, null);
+                c = contentResolver.query(FriendContentProvider.CONTENT_URI, projection, "sex=" + "\"" + editSex.getText().toString() + "\"", null, null);
             }
             else if(!editAddress.getText().toString().equals("")) {
 
-                c = friendDb.query(true, DB_TABLE, new String[]{"name", "sex", "address"}, "address=" + "\"" + editAddress.getText().toString() + "\"", null, null, null, null, null);
+                c = contentResolver.query(FriendContentProvider.CONTENT_URI, projection, "address=" + "\"" + editAddress.getText().toString() + "\"", null, null);
             }
 
             if (c == null) {
 
                 editShowData.setText("");
 
-                Toast.makeText(SQLiteActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContentProviderActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
             }
             else {
 
@@ -130,9 +102,10 @@ public class SQLiteActivity extends AppCompatActivity {
 
                     editShowData.setText("");
 
-                    Toast.makeText(SQLiteActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ContentProviderActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
                 }
             }
+
         }
     };
 
@@ -141,15 +114,17 @@ public class SQLiteActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
+            String project[] = new String[]{"name", "sex", "address"};
+
             Cursor c = null;
 
-            c = friendDb.query(true, DB_TABLE, new String[]{"name", "sex", "address"}, null, null, null, null, null, null);
+            c = contentResolver.query(FriendContentProvider.CONTENT_URI, project, null, null, null);
 
             if (c == null) {
 
                 editShowData.setText("");
 
-                Toast.makeText(SQLiteActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContentProviderActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
             }
             else {
 
@@ -168,9 +143,10 @@ public class SQLiteActivity extends AppCompatActivity {
 
                     editShowData.setText("");
 
-                    Toast.makeText(SQLiteActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ContentProviderActivity.this, "沒有這筆資料", Toast.LENGTH_SHORT).show();
                 }
             }
+
         }
     };
 }
