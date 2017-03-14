@@ -51,7 +51,7 @@
             android:text="地址 : "/>
 
         <EditText
-            android:id="@+id/editAdress"
+            android:id="@+id/editAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -89,7 +89,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/edtList"
+        android:id="@+id/edtShowData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
