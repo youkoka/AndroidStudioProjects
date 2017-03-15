@@ -180,7 +180,8 @@
             android:authorities="com.example.yenhenchia.projectpractice.ContentProvider.FriendContentProvider"
             android:exported="true" />
 
-        <activity android:name=".FileStream.FileStreamActivity"></activity>
+        <activity android:name=".FileStream.FileStreamActivity" />
+        <activity android:name=".ScreenSizeFragment.ScreenSizeFragmentActivity"></activity>
     </application>
 
 </manifest>

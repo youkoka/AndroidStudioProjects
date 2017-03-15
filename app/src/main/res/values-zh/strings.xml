@@ -42,6 +42,7 @@
         <item>SQLite</item>
         <item>ContentProvider</item>
         <item>FileStream</item>
+        <item>ScreenSizeFragment</item>
 
     </string-array>
 
