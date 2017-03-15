@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">ProjectPractice</string>
+
+    <string-array name="listItem">
+
+        <item>Spinner-zh</item>
+        <item>RadioButton-zh</item>
+        <item>NumberPicker-zh</item>
+        <item>ScrollViewAndCheckbox-zh</item>
+        <item>LinearLayout-zh</item>
+        <item>TableLayout-zh</item>
+        <item>RelativeLayout-zh</item>
+        <item>ButtonSelector-zh</item>
+        <item>CoordinatorLayout-zh</item>
+        <item>ImageButtonAndView-zh</item>
+        <item>GridView-zh</item>
+        <item>ViewAnimation-zh</item>
+        <item>DrawAnimation-zh</item>
+        <item>PropertyAnimation-zh</item>
+        <item>SimpleFragment-zh</item>
+        <item>ImageListView</item>
+        <item>ExpandableListView</item>
+        <item>RecyclerView</item>
+        <item>AutoCompleteTextView</item>
+        <item>SeekBarAndRatingBar</item>
+        <item>DateAndTimePicker</item>
+        <item>ProgressBarAndDialog</item>
+        <item>AlertDialog</item>
+        <item>SnackBar</item>
+        <item>CustomDialog</item>
+        <item>SimpleIntent</item>
+        <item>SimpleBroadcast</item>
+        <item>SimpleService</item>
+        <item>ActivityLifecycle</item>
+        <item>ActionBarOptionMenu</item>
+        <item>ActionBarContextMenu</item>
+        <item>ActionItemAndView</item>
+        <item>NavigationDrawer</item>
+        <item>ScrollableSwipe</item>
+        <item>TabLayout</item>
+        <item>Notification</item>
+        <item>SQLite</item>
+        <item>ContentProvider</item>
+        <item>FileStream</item>
+
+    </string-array>
+
+    <string name="sex">性別:</string>
+    <string name="sexMale">男</string>
+    <string name="sexFemale">女</string>
+
+    <string-array name="sexList">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <string name="age">年齡:</string>
+    <string name="male_age_range1">小於28歲</string>
+    <string name="male_age_range2">28~33歲</string>
+    <string name="male_age_range3">大於33歲</string>
+    <string name="female_age_range1">小於25歲</string>
+    <string name="female_age_range2">25~30歲</string>
+    <string name="female_age_range3">大於30歲</string>
+
+    <string name="phAge">請輸入年齡</string>
+    <string name="check">確定</string>
+    <string name="suggest">建議:</string>
+    <string name="result">結果:</string>
+
+    <string name="txtRelativeTitle">和電腦猜拳</string>
+    <string name="txtRelatvieCmp">電腦出拳:</string>
+    <string name="txtRelativePlayer">玩家出拳:</string>
+    <string name="scissors">剪刀</string>
+    <string name="stone">石頭</string>
+    <string name="paper">布</string>
+    <string name="relativeResult">判定輸贏:</string>
+
+    <string name="btnRoll">開始擲骰</string>
+    <string name="rollResult">擲骰點數:</string>
+
+    <string name="totoalSet">全部局數</string>
+    <string name="playerWinSet">玩家贏</string>
+    <string name="cmpWinSet">電腦贏</string>
+    <string name="draw">平手</string>
+
+    <string name="auto_cmp_input_text">請輸入文字</string>
+    <string name="auto_cmp_btn_add">加入自動完成文字</string>
+    <string name="auto_cmp_btn_clear">清除自動完成文字</string>
+
+    <string name="seekBar_process">SeekBar的Progress值:</string>
+    <string name="ratingBar_value">RatingBar的Rating值:</string>
+    <string name="ratingBar_process">RatingBar的Progress值:</string>
+
+    <string name="timePicker">Time:</string>
+
+    <string name="progressBarDefault">ProgressBarDefault</string>
+    <string name="progressBarHorizontal">ProgressBarHorizontal</string>
+    <string name="progressBarLarge">ProgressBarLarge</string>
+    <string name="progressBarSmall">ProgressBarSmall</string>
+    <string name="progressDefaultDialog">ProgressDefaultDialog</string>
+    <string name="progressHorizontalDialog">ProgressHorizontalDialog</string>
+
+    <string-array name="regionList">
+        <item>亞洲</item>
+        <item>美洲</item>
+        <item>歐洲</item>
+    </string-array>
+
+    <string-array name="weekday">
+
+        <item>星期ㄧ</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+        <item>星期日</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
