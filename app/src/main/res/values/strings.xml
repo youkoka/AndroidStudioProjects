@@ -41,6 +41,7 @@
         <item>Notification</item>
         <item>SQLite</item>
         <item>ContentProvider</item>
+        <item>FileStream</item>
 
     </string-array>
 

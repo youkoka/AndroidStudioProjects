@@ -173,12 +173,14 @@
         <activity android:name=".TabLayout.TabLayoutActivity" />
         <activity android:name=".Notification.NotificationActivity" />
         <activity android:name=".SQLite.SQLiteActivity" />
-        <activity android:name=".ContentProvider.ContentProviderActivity"></activity>
+        <activity android:name=".ContentProvider.ContentProviderActivity" />
 
         <provider
-            android:authorities="com.example.yenhenchia.projectpractice.ContentProvider.FriendContentProvider"
             android:name=".ContentProvider.FriendContentProvider"
-            android:exported="true"/>
+            android:authorities="com.example.yenhenchia.projectpractice.ContentProvider.FriendContentProvider"
+            android:exported="true" />
+
+        <activity android:name=".FileStream.FileStreamActivity"></activity>
     </application>
 
 </manifest>

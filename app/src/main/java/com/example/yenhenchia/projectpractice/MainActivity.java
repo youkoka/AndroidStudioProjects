@@ -24,6 +24,7 @@ import com.example.yenhenchia.projectpractice.CustomDialog.CustomDialogActivity;
 import com.example.yenhenchia.projectpractice.DateAndTimePicker.DateAndTimePickerActivity;
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
 import com.example.yenhenchia.projectpractice.ExpandableListView.ExpandListViewActivity;
+import com.example.yenhenchia.projectpractice.FileStream.FileStreamActivity;
 import com.example.yenhenchia.projectpractice.GridView.GridViewActivity;
 import com.example.yenhenchia.projectpractice.ImageButtonAndView.ImageButtonAndViewActivity;
 import com.example.yenhenchia.projectpractice.ImageListView.ImageListViewActivity;
@@ -90,6 +91,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeNotification           = 35;
     private static final int itemTypeSQLite                 = 36;
     private static final int itemTypeContentProvider        = 37;
+    private static final int itemTypeFileStream             = 38;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -382,6 +384,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ContentProviderActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeFileStream: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, FileStreamActivity.class);
                     startActivity(intent);
                 }
                     break;
