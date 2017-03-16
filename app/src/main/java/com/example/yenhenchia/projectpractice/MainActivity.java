@@ -37,6 +37,7 @@ import com.example.yenhenchia.projectpractice.RadioButton.RadioButtonActivity;
 import com.example.yenhenchia.projectpractice.RecyclerView.RecyclerViewAndCardViewActivity;
 import com.example.yenhenchia.projectpractice.RelativeLayout.RelativeLayoutActivity;
 import com.example.yenhenchia.projectpractice.SQLite.SQLiteActivity;
+import com.example.yenhenchia.projectpractice.SceenSize.SreenSizeActivity;
 import com.example.yenhenchia.projectpractice.ScreenSizeFragment.ScreenSizeFragmentActivity;
 import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAndCheckBoxActivity;
 import com.example.yenhenchia.projectpractice.ScrollableSwipe.ScrollableSwipeActivity;
@@ -94,6 +95,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeContentProvider        = 37;
     private static final int itemTypeFileStream             = 38;
     private static final int itemTypeScreenSizeFragment     = 39;
+    private static final int itemTypeSreenSize              = 40;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -400,6 +402,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, ScreenSizeFragmentActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSreenSize: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SreenSizeActivity.class);
                     startActivity(intent);
                 }
                     break;

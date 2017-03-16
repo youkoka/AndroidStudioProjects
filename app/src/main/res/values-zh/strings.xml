@@ -43,6 +43,7 @@
         <item>ContentProvider</item>
         <item>FileStream</item>
         <item>ScreenSizeFragment</item>
+        <item>ScreenSize</item>
 
     </string-array>
 
