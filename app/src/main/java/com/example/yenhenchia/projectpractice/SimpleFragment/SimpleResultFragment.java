@@ -17,6 +17,7 @@ import com.example.yenhenchia.projectpractice.R;
 public class SimpleResultFragment extends Fragment {
 
     private EditText editTotalSet, editDrawSet, editPlayerWinSet, editCmpWinSet;
+    private int totalSetCount, playerWinSetCount, cmpWinSetCount, drawSetCount;
 
     public SimpleResultFragment() {
         // Required empty public constructor
@@ -34,23 +35,28 @@ public class SimpleResultFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-//        this.editTotalSet = (EditText)getView().findViewById(R.id.editTotal);
-//        this.editDrawSet = (EditText)getView().findViewById(R.id.editDraw);
-//        this.editPlayerWinSet = (EditText)getView().findViewById(R.id.editPlayerSet);
-//        this.editCmpWinSet = (EditText)getView().findViewById(R.id.editCmpSet);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
         this.editTotalSet = (EditText)getView().findViewById(R.id.editTotal);
         this.editDrawSet = (EditText)getView().findViewById(R.id.editDraw);
         this.editPlayerWinSet = (EditText)getView().findViewById(R.id.editPlayerSet);
         this.editCmpWinSet = (EditText)getView().findViewById(R.id.editCmpSet);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        this.editTotalSet.setText(String.valueOf(totalSetCount));
+        this.editPlayerWinSet.setText(String.valueOf(playerWinSetCount));
+        this.editCmpWinSet.setText(String.valueOf(cmpWinSetCount));
+        this.editDrawSet.setText(String.valueOf(drawSetCount));
+    }
+
     public void setGameResult(int totalSet, int drawSet, int playerWinSet, int cmpWinSet) {
+
+        this.totalSetCount = totalSet;
+        this.drawSetCount = drawSet;
+        this.playerWinSetCount = playerWinSet;
+        this.cmpWinSetCount = cmpWinSet;
 
         if (this.editTotalSet != null) {
 
