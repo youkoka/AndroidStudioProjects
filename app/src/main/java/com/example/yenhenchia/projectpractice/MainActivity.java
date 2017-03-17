@@ -3,6 +3,7 @@ package com.example.yenhenchia.projectpractice;
 import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.example.yenhenchia.projectpractice.ContentProvider.ContentProviderAct
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
 import com.example.yenhenchia.projectpractice.CustomDialog.CustomDialogActivity;
 import com.example.yenhenchia.projectpractice.DateAndTimePicker.DateAndTimePickerActivity;
+import com.example.yenhenchia.projectpractice.Drawable.DrawableActivity;
 import com.example.yenhenchia.projectpractice.DrawableAnimationAndGame.DrawableAnimatinAndGameActivity;
 import com.example.yenhenchia.projectpractice.ExpandableListView.ExpandListViewActivity;
 import com.example.yenhenchia.projectpractice.FileStream.FileStreamActivity;
@@ -96,6 +98,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeFileStream             = 38;
     private static final int itemTypeScreenSizeFragment     = 39;
     private static final int itemTypeSreenSize              = 40;
+    private static final int itemTypeDrawable               = 41;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -409,6 +412,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SreenSizeActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeDrawable: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, DrawableActivity.class);
                     startActivity(intent);
                 }
                     break;

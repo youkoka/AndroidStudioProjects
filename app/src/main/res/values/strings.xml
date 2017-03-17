@@ -44,7 +44,7 @@
         <item>FileStream</item>
         <item>ScreenSizeFragment</item>
         <item>ScreenSize</item>
-
+        <item>Drawable</item>
     </string-array>
 
     <string name="sex">性別:</string>
