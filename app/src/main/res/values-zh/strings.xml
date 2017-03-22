@@ -45,6 +45,8 @@
         <item>ScreenSizeFragment</item>
         <item>ScreenSize</item>
         <item>Drawable</item>
+        <item>SimpleCanvas</item>
+
     </string-array>
 
     <string name="sex">性別:</string>

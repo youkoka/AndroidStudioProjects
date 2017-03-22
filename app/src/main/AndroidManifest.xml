@@ -183,7 +183,8 @@
         <activity android:name=".FileStream.FileStreamActivity" />
         <activity android:name=".ScreenSizeFragment.ScreenSizeFragmentActivity" />
         <activity android:name=".SceenSize.SreenSizeActivity" />
-        <activity android:name=".Drawable.DrawableActivity"></activity>
+        <activity android:name=".Drawable.DrawableActivity" />
+        <activity android:name=".SimpleCanvas.SimpleCanvasActivity"></activity>
     </application>
 
 </manifest>

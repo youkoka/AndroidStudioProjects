@@ -45,6 +45,7 @@ import com.example.yenhenchia.projectpractice.ScrollViewAndCheckBox.ScrollViewAn
 import com.example.yenhenchia.projectpractice.ScrollableSwipe.ScrollableSwipeActivity;
 import com.example.yenhenchia.projectpractice.SeekBarAndRatingBar.SeekBarAndRatingBarActivity;
 import com.example.yenhenchia.projectpractice.SimpleBroadcast.SimpleBroadcastActivity;
+import com.example.yenhenchia.projectpractice.SimpleCanvas.SimpleCanvasActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
 import com.example.yenhenchia.projectpractice.SimpleIntent.SimpleIntentActivity;
 import com.example.yenhenchia.projectpractice.SimpleService.SimpleServiceActivity;
@@ -99,6 +100,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeScreenSizeFragment     = 39;
     private static final int itemTypeSreenSize              = 40;
     private static final int itemTypeDrawable               = 41;
+    private static final int itemTypeSimpleCanvas           = 42;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -419,6 +421,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, DrawableActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSimpleCanvas: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SimpleCanvasActivity.class);
                     startActivity(intent);
                 }
                     break;
