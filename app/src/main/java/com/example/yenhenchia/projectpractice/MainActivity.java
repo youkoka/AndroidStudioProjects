@@ -52,6 +52,7 @@ import com.example.yenhenchia.projectpractice.SimpleService.SimpleServiceActivit
 import com.example.yenhenchia.projectpractice.SnackBar.SnackBarActivity;
 import com.example.yenhenchia.projectpractice.Spinner.SpinnerActivity;
 import com.example.yenhenchia.projectpractice.NumberPicker.NumberPickerActivity;
+import com.example.yenhenchia.projectpractice.SurfaceView.SurfaceViewActivity;
 import com.example.yenhenchia.projectpractice.TabLayout.TabLayoutActivity;
 import com.example.yenhenchia.projectpractice.TableLayout.TableLayoutActivity;
 import com.example.yenhenchia.projectpractice.ViewAnimation.ViewAnimationActivity;
@@ -101,6 +102,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSreenSize              = 40;
     private static final int itemTypeDrawable               = 41;
     private static final int itemTypeSimpleCanvas           = 42;
+    private static final int itemTypeSurfaceView            = 43;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -428,6 +430,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SimpleCanvasActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSurfaceView: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SurfaceViewActivity.class);
                     startActivity(intent);
                 }
                     break;

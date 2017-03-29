@@ -46,6 +46,7 @@
         <item>ScreenSize</item>
         <item>Drawable</item>
         <item>SimpleCanvas</item>
+        <item>SurfaceView</item>
 
     </string-array>
 
