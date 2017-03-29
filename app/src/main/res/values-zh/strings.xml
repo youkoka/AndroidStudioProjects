@@ -47,6 +47,7 @@
         <item>Drawable</item>
         <item>SimpleCanvas</item>
         <item>SurfaceView</item>
+        <item>WebView</item>
 
     </string-array>
 
