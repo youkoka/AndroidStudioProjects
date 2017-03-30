@@ -57,6 +57,7 @@ import com.example.yenhenchia.projectpractice.TabLayout.TabLayoutActivity;
 import com.example.yenhenchia.projectpractice.TableLayout.TableLayoutActivity;
 import com.example.yenhenchia.projectpractice.ViewAnimation.ViewAnimationActivity;
 import com.example.yenhenchia.projectpractice.WebView.WebViewActivity;
+import com.example.yenhenchia.projectpractice.WebViewForJS.WebViewForJSActivity;
 
 public class MainActivity extends ListActivity {
 
@@ -105,6 +106,7 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeSimpleCanvas           = 42;
     private static final int itemTypeSurfaceView            = 43;
     private static final int itemTypeWebView                = 44;
+    private static final int itemTypeWebViewForJS           = 45;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -446,6 +448,13 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, WebViewActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeWebViewForJS: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, WebViewForJSActivity.class);
                     startActivity(intent);
                 }
                     break;

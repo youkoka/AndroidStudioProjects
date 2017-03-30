@@ -187,7 +187,8 @@
         <activity android:name=".Drawable.DrawableActivity" />
         <activity android:name=".SimpleCanvas.SimpleCanvasActivity" />
         <activity android:name=".SurfaceView.SurfaceViewActivity" />
-        <activity android:name=".WebView.WebViewActivity"></activity>
+        <activity android:name=".WebView.WebViewActivity" />
+        <activity android:name=".WebViewForJS.WebViewForJSActivity"></activity>
     </application>
 
 </manifest>
