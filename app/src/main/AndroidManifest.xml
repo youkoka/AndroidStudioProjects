@@ -188,7 +188,8 @@
         <activity android:name=".SimpleCanvas.SimpleCanvasActivity" />
         <activity android:name=".SurfaceView.SurfaceViewActivity" />
         <activity android:name=".WebView.WebViewActivity" />
-        <activity android:name=".WebViewForJS.WebViewForJSActivity"></activity>
+        <activity android:name=".WebViewForJS.WebViewForJSActivity" />
+        <activity android:name=".ViewPager.SimpleViewPagerActivity"></activity>
     </application>
 
 </manifest>

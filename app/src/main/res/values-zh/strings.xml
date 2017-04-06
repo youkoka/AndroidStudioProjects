@@ -49,6 +49,7 @@
         <item>SurfaceView</item>
         <item>WebView</item>
         <item>WebViewForJS</item>
+        <item>SimpleViewPager</item>
 
     </string-array>
 
