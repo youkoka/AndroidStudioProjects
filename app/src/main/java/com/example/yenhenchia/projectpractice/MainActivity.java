@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -112,6 +113,8 @@ public class MainActivity extends ListActivity {
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,6 +122,10 @@ public class MainActivity extends ListActivity {
         Log.d(TAG_LOG, "onCreate!");
 
         setContentView(R.layout.activity_main);
+
+        this.toolbar = (Toolbar) findViewById(R.id.baseToolBar);
+        this.toolbar.setTitle("Android Project");
+        this.toolbar.setSubtitle("Android Sub Project");
 
         ArrayAdapter<CharSequence> arrAdpList = ArrayAdapter.createFromResource(this, R.array.listItem,
                 android.R.layout.simple_list_item_1);

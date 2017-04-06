@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context="com.example.yenhenchia.projectpractice.ViewPager.SimpleViewPagerActivity">
 
+    <include layout="@layout/basetoolbar" />
+
     <com.example.yenhenchia.projectpractice.ViewPager.BaseViewPager
         android:id="@+id/BaseViewPager"
         android:layout_width="match_parent"
