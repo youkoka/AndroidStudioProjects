@@ -34,6 +34,8 @@ public class RecycleViewItemAdapter extends RecyclerView.Adapter<RecycleViewItem
             this.txtTitle = (TextView)itemView.findViewById(R.id.txtTitle);
 
             itemView.setOnClickListener(this);
+
+
         }
 
         @Override
@@ -54,6 +56,10 @@ public class RecycleViewItemAdapter extends RecyclerView.Adapter<RecycleViewItem
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_view_item, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(itemView);
+
+//        int height = parent.getMeasuredHeight() / mListString.size();
+
+//        itemView.setMinimumHeight(height);
 
         return viewHolder;
     }

@@ -21,7 +21,7 @@ public class RecyclerViewAndCardViewActivity extends AppCompatActivity {
 
         List<String> list = new ArrayList<>();
 
-        for (int i = 0; i != 50; i++) {
+        for (int i = 0; i != 16; i++) {
 
             list.add(new String("第 " + String.valueOf(i + 1) + " 項"));
         }
@@ -29,8 +29,22 @@ public class RecyclerViewAndCardViewActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycleView);
 
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 10);
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                switch (position) {
+                    case 0:
+                        return 2;
+                    case 1:
+                        return 3;
+                    default:
+                        return 1;
+                }
+            }
+        });
+        recyclerView.setLayoutManager(gridLayoutManager);
+//        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(10, StaggeredGridLayoutManager.VERTICAL));
         RecycleViewItemAdapter itemAdapter = new RecycleViewItemAdapter(list);
         recyclerView.setAdapter(itemAdapter);
     }
