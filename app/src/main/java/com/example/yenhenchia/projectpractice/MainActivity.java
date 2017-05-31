@@ -20,6 +20,7 @@ import com.example.yenhenchia.projectpractice.ActivityLifecycle.ActivityLifecycl
 import com.example.yenhenchia.projectpractice.AlertDialog.AlertDialogActivity;
 import com.example.yenhenchia.projectpractice.AutoCompleteText.AutoCompleteTextViewActivity;
 import com.example.yenhenchia.projectpractice.ButtonSelector.ButtonSelectorActivity;
+import com.example.yenhenchia.projectpractice.ClipImage.ClipImageActivity;
 import com.example.yenhenchia.projectpractice.ContentProvider.ContentProviderActivity;
 import com.example.yenhenchia.projectpractice.CoordinatorLayout.CoordinatorLayoutActivity;
 import com.example.yenhenchia.projectpractice.CustomDialog.CustomDialogActivity;
@@ -49,6 +50,7 @@ import com.example.yenhenchia.projectpractice.SimpleBroadcast.SimpleBroadcastAct
 import com.example.yenhenchia.projectpractice.SimpleCanvas.SimpleCanvasActivity;
 import com.example.yenhenchia.projectpractice.SimpleFragment.SimpleFragmentActivity;
 import com.example.yenhenchia.projectpractice.SimpleIntent.SimpleIntentActivity;
+import com.example.yenhenchia.projectpractice.SimpleMediaPlayer.SimpleMediaPlayerActivity;
 import com.example.yenhenchia.projectpractice.SimpleService.SimpleServiceActivity;
 import com.example.yenhenchia.projectpractice.SnackBar.SnackBarActivity;
 import com.example.yenhenchia.projectpractice.Spinner.SpinnerActivity;
@@ -110,6 +112,8 @@ public class MainActivity extends ListActivity {
     private static final int itemTypeWebView                = 44;
     private static final int itemTypeWebViewForJS           = 45;
     private static final int itemTypeSimpleViewPager        = 46;
+    private static final int itemTypeSimpleMediaPlayer      = 47;
+    private static final int itemTypeClipImage              = 48;
 
     private static final String TAG_LOG = "Main Lifecycle!";
 
@@ -471,6 +475,20 @@ public class MainActivity extends ListActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(MainActivity.this, SimpleViewPagerActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeSimpleMediaPlayer: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, SimpleMediaPlayerActivity.class);
+                    startActivity(intent);
+                }
+                    break;
+                case itemTypeClipImage: {
+
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ClipImageActivity.class);
                     startActivity(intent);
                 }
                     break;

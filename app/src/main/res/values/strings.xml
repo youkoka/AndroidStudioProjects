@@ -50,7 +50,8 @@
         <item>WebView</item>
         <item>WebViewForJS</item>
         <item>SimpleViewPager</item>
-
+        <item>SimpleMediaPlayer</item>
+        <item>ClipImage</item>
     </string-array>
 
     <string name="sex">性別:</string>

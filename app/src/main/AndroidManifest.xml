@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -188,8 +189,11 @@
         <activity android:name=".SurfaceView.SurfaceViewActivity" />
         <activity android:name=".WebView.WebViewActivity" />
         <activity android:name=".WebViewForJS.WebViewForJSActivity" />
-        <activity android:name=".ViewPager.SimpleViewPagerActivity"
-            android:screenOrientation="userLandscape"></activity>
+        <activity
+            android:name=".ViewPager.SimpleViewPagerActivity"
+            android:screenOrientation="userLandscape" />
+        <activity android:name=".SimpleMediaPlayer.SimpleMediaPlayerActivity" />
+        <activity android:name=".ClipImage.ClipImageActivity"></activity>
     </application>
 
 </manifest>

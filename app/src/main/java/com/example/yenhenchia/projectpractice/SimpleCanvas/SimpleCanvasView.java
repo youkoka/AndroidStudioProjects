@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RotateDrawable;
@@ -49,7 +50,7 @@ public class SimpleCanvasView extends View {
 
         canvas.drawLine(canvas.getWidth() / 2, canvas.getHeight() / 2, canvas.getWidth() - 10, canvas.getHeight() / 2, paint);
 
-        Drawable drawImg = ContextCompat.getDrawable(mContext, R.drawable.icon_hammer);
+        Drawable drawImg = ContextCompat.getDrawable(mContext, R.drawable.dog_0);
         drawImg.setBounds(10, canvas.getHeight() / 2 + 10, canvas.getWidth() / 2-10, canvas.getHeight() * 3/ 4);
         drawImg.draw(canvas);
 
@@ -57,5 +58,7 @@ public class SimpleCanvasView extends View {
         rotateDrawable.setLevel(1000);
         rotateDrawable.setBounds(canvas.getWidth() / 2 + 30, canvas.getHeight() / 2 + 10, canvas.getWidth() + 10, canvas.getHeight() * 3/ 4);
         rotateDrawable.draw(canvas);
+
+
     }
 }
