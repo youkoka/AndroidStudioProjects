@@ -10,6 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -22,6 +23,9 @@ public class ClipImageActivity extends AppCompatActivity {
     private ImageView imageView;
     private TextView textView;
 
+    private Bitmap bitmap, holeBitmap;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +34,15 @@ public class ClipImageActivity extends AppCompatActivity {
         imageView = (ImageView)findViewById(R.id.clipImageView);
         textView = (TextView)findViewById(R.id.clipTextView);
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dog_0);
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dog_0);
 
-        Bitmap holeBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        holeBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+
+
 
         Canvas canvas = new Canvas(holeBitmap);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(Color.BLUE);
-        paint.setStyle(Paint.Style.FILL);
 
         canvas.drawBitmap(bitmap, 0, 0, paint);
 
@@ -50,7 +54,7 @@ public class ClipImageActivity extends AppCompatActivity {
 
         float x = 0;
         float y = 0;
-        canvas.drawCircle(x, y, radius, paint);
+        canvas.drawCircle(100, 100, radius, paint);
 
         imageView.setImageBitmap(holeBitmap);
 
@@ -58,7 +62,10 @@ public class ClipImageActivity extends AppCompatActivity {
         textView.setLayoutParams(layoutParams);
 
 
-        textView.setTranslationX(imageView.getX() - radius);
-        textView.setTranslationY(imageView.getY() - radius);
+        textView.setTranslationX(imageView.getX() - radius - 10);
+        textView.setTranslationY(imageView.getY() - radius - 10);
+
     }
+
+
 }

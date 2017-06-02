@@ -3,6 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="textview_roundle">60dp</dimen>
+    <dimen name="textview_roundle">30dp</dimen>
     <dimen name="textview_pos">-10dp</dimen>
 </resources>
